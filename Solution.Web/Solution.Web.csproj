@@ -1,0 +1,1590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E6CEFB13-F213-4D22-B762-08E2F865DCB2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Solution.Web</RootNamespace>
+    <AssemblyName>Solution.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44326</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.7</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.1.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.1.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnnonceApiWebController.cs" />
+    <Compile Include="Controllers\AnnonceController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InterresseController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MeubleController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AnnonceVM.cs" />
+    <Compile Include="Models\FilmVm.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LikeVM.cs" />
+    <Compile Include="Models\MaisonVM.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MeubleVm.cs" />
+    <Compile Include="Models\ProducteurVm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Front End\.gitignore" />
+    <Content Include="Front End\404.html" />
+    <Content Include="Front End\500.html" />
+    <Content Include="Front End\aboutus.html" />
+    <Content Include="Front End\advancedfeatures.html" />
+    <Content Include="Front End\blank_page.html" />
+    <Content Include="Front End\blog.html" />
+    <Content Include="Front End\blogitem.html" />
+    <Content Include="Front End\category.html" />
+    <Content Include="Front End\compareproducts.html" />
+    <Content Include="Front End\contact.html" />
+    <Content Include="Front End\css\404.css" />
+    <Content Include="Front End\css\500.css" />
+    <Content Include="Front End\css\aboutus.css" />
+    <Content Include="Front End\css\blog.css" />
+    <Content Include="Front End\css\bootstrap.css" />
+    <Content Include="Front End\css\bootstrap.min.css" />
+    <Content Include="Front End\css\cart.css" />
+    <Content Include="Front End\css\contact.css" />
+    <Content Include="Front End\css\custom.css" />
+    <Content Include="Front End\css\faq.css" />
+    <Content Include="Front End\css\features.css" />
+    <Content Include="Front End\css\font-awesome.min.css" />
+    <Content Include="Front End\css\forgot.css" />
+    <Content Include="Front End\css\jquery.circliful.css" />
+    <Content Include="Front End\css\login.css" />
+    <Content Include="Front End\css\news.css" />
+    <Content Include="Front End\css\panel.css" />
+    <Content Include="Front End\css\portfolio.css" />
+    <Content Include="Front End\css\price.css" />
+    <Content Include="Front End\css\register.css" />
+    <Content Include="Front End\css\shopping.css" />
+    <Content Include="Front End\css\skins\asbestos_skin.css" />
+    <Content Include="Front End\css\skins\danger_skin.css" />
+    <Content Include="Front End\css\skins\hoki_skin.css" />
+    <Content Include="Front End\css\skins\primary_skin.css" />
+    <Content Include="Front End\css\skins\purple_skin.css" />
+    <Content Include="Front End\css\skins\success_skin.css" />
+    <Content Include="Front End\css\skins\turquoise_skin.css" />
+    <Content Include="Front End\css\skins\warning_skin.css" />
+    <Content Include="Front End\css\tabbular.css" />
+    <Content Include="Front End\css\timeline.css" />
+    <Content Include="Front End\css\timeline1.css" />
+    <Content Include="Front End\faq.html" />
+    <Content Include="Front End\fonts\fontawesome-webfont.svg" />
+    <Content Include="Front End\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Front End\forgot.html" />
+    <Content Include="Front End\grid.html" />
+    <Content Include="Front End\images\13.jpg" />
+    <Content Include="Front End\images\14.jpg" />
+    <Content Include="Front End\images\15.jpg" />
+    <Content Include="Front End\images\16.jpg" />
+    <Content Include="Front End\images\authors\author.png" />
+    <Content Include="Front End\images\authors\avatar.jpg" />
+    <Content Include="Front End\images\authors\avatar1.jpg" />
+    <Content Include="Front End\images\authors\avatar2.jpg" />
+    <Content Include="Front End\images\authors\avatar3.jpg" />
+    <Content Include="Front End\images\authors\avatar4.jpg" />
+    <Content Include="Front End\images\authors\avatar5.jpg" />
+    <Content Include="Front End\images\authors\avatar6.jpg" />
+    <Content Include="Front End\images\authors\avatar7.jpg" />
+    <Content Include="Front End\images\authors\img1.jpg" />
+    <Content Include="Front End\images\authors\img2.jpg" />
+    <Content Include="Front End\images\authors\img3.jpg" />
+    <Content Include="Front End\images\authors\img4.jpg" />
+    <Content Include="Front End\images\background.jpg" />
+    <Content Include="Front End\images\background.png" />
+    <Content Include="Front End\images\bblog1.jpg" />
+    <Content Include="Front End\images\bblog2.jpg" />
+    <Content Include="Front End\images\bblog3.jpg" />
+    <Content Include="Front End\images\bblog4.jpg" />
+    <Content Include="Front End\images\c1.jpg" />
+    <Content Include="Front End\images\c2.jpg" />
+    <Content Include="Front End\images\cart\1.jpg" />
+    <Content Include="Front End\images\cart\2.jpg" />
+    <Content Include="Front End\images\cart\3.jpg" />
+    <Content Include="Front End\images\cart\4.jpg" />
+    <Content Include="Front End\images\cart\big\1.jpg" />
+    <Content Include="Front End\images\cart\big\2.jpg" />
+    <Content Include="Front End\images\cart\big\3.jpg" />
+    <Content Include="Front End\images\cart\big\4.jpg" />
+    <Content Include="Front End\images\cart\default\htc.jpg" />
+    <Content Include="Front End\images\cart\default\samsung.jpg" />
+    <Content Include="Front End\images\cart\default\saree1.jpg" />
+    <Content Include="Front End\images\cart\default\saree10.jpg" />
+    <Content Include="Front End\images\cart\default\saree11.jpg" />
+    <Content Include="Front End\images\cart\default\saree12.jpg" />
+    <Content Include="Front End\images\cart\default\saree2.jpg" />
+    <Content Include="Front End\images\cart\default\saree3.jpg" />
+    <Content Include="Front End\images\cart\default\saree4.jpg" />
+    <Content Include="Front End\images\cart\default\saree5.jpg" />
+    <Content Include="Front End\images\cart\default\saree6.jpg" />
+    <Content Include="Front End\images\cart\default\saree7.jpg" />
+    <Content Include="Front End\images\cart\default\saree8.jpg" />
+    <Content Include="Front End\images\cart\default\saree9.jpg" />
+    <Content Include="Front End\images\cart\default\shirt.jpg" />
+    <Content Include="Front End\images\cart\default\sony.jpg" />
+    <Content Include="Front End\images\cart\htc.jpg" />
+    <Content Include="Front End\images\cart\karbon.jpg" />
+    <Content Include="Front End\images\cart\men.jpg" />
+    <Content Include="Front End\images\cart\men2.jpg" />
+    <Content Include="Front End\images\cart\men3.jpg" />
+    <Content Include="Front End\images\cart\men4.jpg" />
+    <Content Include="Front End\images\cart\nokia.jpg" />
+    <Content Include="Front End\images\cart\samsung balck.jpg" />
+    <Content Include="Front End\images\cart\samsung.jpg" />
+    <Content Include="Front End\images\cart\saree.jpg" />
+    <Content Include="Front End\images\cart\saree2.jpg" />
+    <Content Include="Front End\images\cart\saree3.jpg" />
+    <Content Include="Front End\images\cart\saree4.jpg" />
+    <Content Include="Front End\images\cart\small\1.jpg" />
+    <Content Include="Front End\images\cart\small\2.jpg" />
+    <Content Include="Front End\images\cart\small\3.jpg" />
+    <Content Include="Front End\images\cart\small\4.jpg" />
+    <Content Include="Front End\images\cart\sony.jpg" />
+    <Content Include="Front End\images\compare1.jpg" />
+    <Content Include="Front End\images\compare2.jpg" />
+    <Content Include="Front End\images\compare3.jpg" />
+    <Content Include="Front End\images\contact1.jpg" />
+    <Content Include="Front End\images\contact2.jpg" />
+    <Content Include="Front End\images\contact3.jpg" />
+    <Content Include="Front End\images\d1.jpg" />
+    <Content Include="Front End\images\download.png" />
+    <Content Include="Front End\images\favicon-16x16.png" />
+    <Content Include="Front End\images\favicon.png" />
+    <Content Include="Front End\images\gallery\1.jpg" />
+    <Content Include="Front End\images\gallery\10.jpg" />
+    <Content Include="Front End\images\gallery\11.jpg" />
+    <Content Include="Front End\images\gallery\12.jpg" />
+    <Content Include="Front End\images\gallery\2.jpg" />
+    <Content Include="Front End\images\gallery\3.jpg" />
+    <Content Include="Front End\images\gallery\4.jpg" />
+    <Content Include="Front End\images\gallery\5.jpg" />
+    <Content Include="Front End\images\gallery\6.jpg" />
+    <Content Include="Front End\images\gallery\7.jpg" />
+    <Content Include="Front End\images\gallery\8.jpg" />
+    <Content Include="Front End\images\gallery\9.jpg" />
+    <Content Include="Front End\images\image_1.JPG" />
+    <Content Include="Front End\images\image_11.jpg" />
+    <Content Include="Front End\images\image_12.jpg" />
+    <Content Include="Front End\images\image_13.jpg" />
+    <Content Include="Front End\images\image_14.jpg" />
+    <Content Include="Front End\images\image_15.jpg" />
+    <Content Include="Front End\images\image_16.jpg" />
+    <Content Include="Front End\images\image_17.jpg" />
+    <Content Include="Front End\images\image_18.jpg" />
+    <Content Include="Front End\images\image_19.jpg" />
+    <Content Include="Front End\images\image_2.JPG" />
+    <Content Include="Front End\images\image_20.jpg" />
+    <Content Include="Front End\images\image_4.JPG" />
+    <Content Include="Front End\images\img_3.jpg" />
+    <Content Include="Front End\images\img_4.jpg" />
+    <Content Include="Front End\images\img_5.jpg" />
+    <Content Include="Front End\images\img_6.jpg" />
+    <Content Include="Front End\images\img_au.jpg" />
+    <Content Include="Front End\images\img_b1.jpg" />
+    <Content Include="Front End\images\img_b2.jpg" />
+    <Content Include="Front End\images\img_b3.jpg" />
+    <Content Include="Front End\images\josh-new.png" />
+    <Content Include="Front End\images\layout.png" />
+    <Content Include="Front End\images\logo.png" />
+    <Content Include="Front End\images\news_image_1.jpg" />
+    <Content Include="Front End\images\night.jpg" />
+    <Content Include="Front End\images\portfolio_item_1_image.jpg" />
+    <Content Include="Front End\images\portfolio_item_2_image.jpg" />
+    <Content Include="Front End\images\portfolio_item_3_image.jpg" />
+    <Content Include="Front End\images\portfolio_item_4_image.jpg" />
+    <Content Include="Front End\images\portfolio_item_6_image.jpg" />
+    <Content Include="Front End\images\portfolio_item_7_image.jpg" />
+    <Content Include="Front End\images\slide_1.jpg" />
+    <Content Include="Front End\images\slide_2.jpg" />
+    <Content Include="Front End\images\slide_3.jpg" />
+    <Content Include="Front End\index.html" />
+    <Content Include="Front End\js\404.js" />
+    <Content Include="Front End\js\aboutus.js" />
+    <Content Include="Front End\js\advfeatures.js" />
+    <Content Include="Front End\js\bootstrap.js" />
+    <Content Include="Front End\js\bootstrap.min.js" />
+    <Content Include="Front End\js\carousel.js" />
+    <Content Include="Front End\js\cart.js" />
+    <Content Include="Front End\js\custom.js" />
+    <Content Include="Front End\js\elevatezoom.js" />
+    <Content Include="Front End\js\faq.js" />
+    <Content Include="Front End\js\gmap.js" />
+    <Content Include="Front End\js\holder.js" />
+    <Content Include="Front End\js\index.js" />
+    <Content Include="Front End\js\isotope.js" />
+    <Content Include="Front End\js\josh_frontend.js" />
+    <Content Include="Front End\js\jquery.circliful.js" />
+    <Content Include="Front End\js\jquery.min.js" />
+    <Content Include="Front End\js\jquery.mixitup.js" />
+    <Content Include="Front End\js\livicons-1.4.min.js" />
+    <Content Include="Front End\js\portfolio.js" />
+    <Content Include="Front End\js\raphael.js" />
+    <Content Include="Front End\js\style-switcher.js" />
+    <Content Include="Front End\login.html" />
+    <Content Include="Front End\news.html" />
+    <Content Include="Front End\news_item.html" />
+    <Content Include="Front End\portfolio.html" />
+    <Content Include="Front End\portfolioitem.html" />
+    <Content Include="Front End\price.html" />
+    <Content Include="Front End\products.html" />
+    <Content Include="Front End\register.html" />
+    <Content Include="Front End\single_product.html" />
+    <Content Include="Front End\timeline.html" />
+    <Content Include="Front End\typography.html" />
+    <Content Include="Front End\vendors\bootstrap-rating-master\.gitignore" />
+    <Content Include="Front End\vendors\bootstrap-rating-master\bootstrap-rating.css" />
+    <Content Include="Front End\vendors\bootstrap-rating-master\bootstrap-rating.js" />
+    <Content Include="Front End\vendors\bootstrap-rating-master\bootstrap-rating.min.js" />
+    <Content Include="Front End\vendors\bootstrap-rating-master\Gruntfile.js" />
+    <Content Include="Front End\vendors\bootstrap-rating-master\index.html" />
+    <Content Include="Front End\vendors\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Front End\vendors\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Front End\vendors\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Front End\vendors\bootstrap\js\npm.js" />
+    <Content Include="Front End\vendors\devicon\.gitignore" />
+    <Content Include="Front End\vendors\devicon\devicon-colors.css" />
+    <Content Include="Front End\vendors\devicon\devicon.css" />
+    <Content Include="Front End\vendors\devicon\devicon.min.css" />
+    <Content Include="Front End\vendors\devicon\fonts\devicon.svg" />
+    <Content Include="Front End\vendors\devicon\icons\amazonwebservices\amazonwebservices-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\amazonwebservices\amazonwebservices-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\amazonwebservices\amazonwebservices-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\android\android-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\android\android-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\android\android-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\android\android-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\angularjs\angularjs-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\angularjs\angularjs-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\angularjs\angularjs-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\angularjs\angularjs-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\apache\apache-line-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\apache\apache-line.svg" />
+    <Content Include="Front End\vendors\devicon\icons\apache\apache-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\apache\apache-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\apache\apache-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\apache\apache-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\appcelerator\appcelerator-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\appcelerator\appcelerator-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\appcelerator\appcelerator-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\apple\apple-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\atom\atom-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\atom\atom-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\backbonejs\backbonejs-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\backbonejs\backbonejs-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\backbonejs\backbonejs-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\backbonejs\backbonejs-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\bootstrap\bootstrap-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\bootstrap\bootstrap-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\bower\bower-line-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\bower\bower-line.svg" />
+    <Content Include="Front End\vendors\devicon\icons\bower\bower-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\bower\bower-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\bower\bower-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\bower\bower-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\chrome\chrome-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\chrome\chrome-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\chrome\chrome-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\chrome\chrome-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\codeigniter\codeigniter-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\codeigniter\codeigniter-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\coffeescript\coffeescript-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\coffeescript\coffeescript-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\cplusplus\cplusplus-line.svg" />
+    <Content Include="Front End\vendors\devicon\icons\cplusplus\cplusplus-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\cplusplus\cplusplus-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\csharp\csharp-line.svg" />
+    <Content Include="Front End\vendors\devicon\icons\csharp\csharp-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\csharp\csharp-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\css3\css3-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\css3\css3-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\css3\css3-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\css3\css3-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\c\c-line.svg" />
+    <Content Include="Front End\vendors\devicon\icons\c\c-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\c\c-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\debian\debian-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\debian\debian-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\debian\debian-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\debian\debian-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\docker\docker-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\docker\docker-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\docker\docker-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\docker\docker-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\doctrine\doctrine-line-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\doctrine\doctrine-line.svg" />
+    <Content Include="Front End\vendors\devicon\icons\doctrine\doctrine-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\doctrine\doctrine-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\doctrine\doctrine-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\doctrine\doctrine-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\dot-net\dot-net-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\dot-net\dot-net-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\dot-net\dot-net-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\dot-net\dot-net-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\drupal\drupal-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\drupal\drupal-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\drupal\drupal-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\drupal\drupal-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\erlang\erlang-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\erlang\erlang-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\erlang\erlang-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\erlang\erlang-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\firefox\firefox-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\firefox\firefox-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\firefox\firefox-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\firefox\firefox-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\foundation\foundation-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\foundation\foundation-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\foundation\foundation-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\foundation\foundation-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\gimp\gimp-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\gimp\gimp-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\gimp\gimp-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\gimp\gimp-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\git\git-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\git\git-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\git\git-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\git\git-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\go\go-line.svg" />
+    <Content Include="Front End\vendors\devicon\icons\go\go-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\go\go-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\grunt\grunt-line-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\grunt\grunt-line.svg" />
+    <Content Include="Front End\vendors\devicon\icons\grunt\grunt-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\grunt\grunt-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\grunt\grunt-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\grunt\grunt-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\gulp\gulp-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\heroku\heroku-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\heroku\heroku-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\heroku\heroku-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\heroku\heroku-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\html5\html5-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\html5\html5-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\html5\html5-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\html5\html5-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\ie10\ie10-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\illustrator\illustrator-line.svg" />
+    <Content Include="Front End\vendors\devicon\icons\illustrator\illustrator-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\inkscape\inkscape-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\inkscape\inkscape-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\inkscape\inkscape-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\inkscape\inkscape-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\javascript\javascript-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\javascript\javascript-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\java\java-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\java\java-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\java\java-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\java\java-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\jquery\jquery-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\jquery\jquery-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\jquery\jquery-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\jquery\jquery-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\krakenjs\krakenjs-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\krakenjs\krakenjs-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\krakenjs\krakenjs-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\krakenjs\krakenjs-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\laravel\laravel-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\laravel\laravel-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\less\less-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\linux\linux-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\linux\linux-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\meteor\meteor-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\meteor\meteor-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\meteor\meteor-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\meteor\meteor-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\mongodb\mongodb-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\mongodb\mongodb-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\mongodb\mongodb-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\mongodb\mongodb-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\moodle\moodle-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\moodle\moodle-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\moodle\moodle-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\moodle\moodle-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\mysql\mysql-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\mysql\mysql-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\mysql\mysql-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\mysql\mysql-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\nginx\nginx-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\nodejs\nodejs-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\nodejs\nodejs-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\nodejs\nodejs-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\nodejs\nodejs-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\nodewebkit\nodewebkit-line-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\nodewebkit\nodewebkit-line.svg" />
+    <Content Include="Front End\vendors\devicon\icons\nodewebkit\nodewebkit-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\nodewebkit\nodewebkit-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\nodewebkit\nodewebkit-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\nodewebkit\nodewebkit-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\oracle\oracle-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\photoshop\photoshop-line.svg" />
+    <Content Include="Front End\vendors\devicon\icons\photoshop\photoshop-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\php\php-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\php\php-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\postgresql\postgresql-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\postgresql\postgresql-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\postgresql\postgresql-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\postgresql\postgresql-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\python\python-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\python\python-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\python\python-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\python\python-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\rails\rails-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\rails\rails-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\rails\rails-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\react\react-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\react\react-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\redhat\redhat-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\redhat\redhat-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\redhat\redhat-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\redhat\redhat-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\redis\redis-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\redis\redis-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\redis\redis-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\redis\redis-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\ruby\ruby-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\ruby\ruby-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\ruby\ruby-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\ruby\ruby-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\sass\sass-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\symfony\symfony-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\symfony\symfony-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\travis\travis-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\travis\travis-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\trello\trello-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\trello\trello-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\ubuntu\ubuntu-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\ubuntu\ubuntu-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\vim\vim-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\vim\vim-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\windows8\windows8-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\windows8\windows8-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\wordpress\wordpress-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\wordpress\wordpress-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\wordpress\wordpress-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\yii\yii-original-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\yii\yii-original.svg" />
+    <Content Include="Front End\vendors\devicon\icons\yii\yii-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\yii\yii-plain.svg" />
+    <Content Include="Front End\vendors\devicon\icons\zend\zend-plain-wordmark.svg" />
+    <Content Include="Front End\vendors\devicon\icons\zend\zend-plain.svg" />
+    <Content Include="Front End\vendors\fancybox\.gitattributes" />
+    <Content Include="Front End\vendors\fancybox\demo\1_b.jpg" />
+    <Content Include="Front End\vendors\fancybox\demo\1_s.jpg" />
+    <Content Include="Front End\vendors\fancybox\demo\2_b.jpg" />
+    <Content Include="Front End\vendors\fancybox\demo\2_s.jpg" />
+    <Content Include="Front End\vendors\fancybox\demo\3_b.jpg" />
+    <Content Include="Front End\vendors\fancybox\demo\3_s.jpg" />
+    <Content Include="Front End\vendors\fancybox\demo\4_b.jpg" />
+    <Content Include="Front End\vendors\fancybox\demo\4_s.jpg" />
+    <Content Include="Front End\vendors\fancybox\demo\5_b.jpg" />
+    <Content Include="Front End\vendors\fancybox\demo\5_s.jpg" />
+    <Content Include="Front End\vendors\fancybox\demo\ajax.txt" />
+    <Content Include="Front End\vendors\fancybox\demo\iframe.html" />
+    <Content Include="Front End\vendors\fancybox\demo\index.html" />
+    <Content Include="Front End\vendors\fancybox\lib\jquery-1.10.1.min.js" />
+    <Content Include="Front End\vendors\fancybox\lib\jquery-1.9.0.min.js" />
+    <Content Include="Front End\vendors\fancybox\lib\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="Front End\vendors\fancybox\source\blank.gif" />
+    <Content Include="Front End\vendors\fancybox\source\fancybox_loading%402x.gif" />
+    <Content Include="Front End\vendors\fancybox\source\fancybox_loading.gif" />
+    <Content Include="Front End\vendors\fancybox\source\fancybox_overlay.png" />
+    <Content Include="Front End\vendors\fancybox\source\fancybox_sprite%402x.png" />
+    <Content Include="Front End\vendors\fancybox\source\fancybox_sprite.png" />
+    <Content Include="Front End\vendors\fancybox\source\helpers\fancybox_buttons.png" />
+    <Content Include="Front End\vendors\fancybox\source\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Front End\vendors\fancybox\source\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Front End\vendors\fancybox\source\helpers\jquery.fancybox-media.js" />
+    <Content Include="Front End\vendors\fancybox\source\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Front End\vendors\fancybox\source\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Front End\vendors\fancybox\source\jquery.fancybox.css" />
+    <Content Include="Front End\vendors\fancybox\source\jquery.fancybox.js" />
+    <Content Include="Front End\vendors\fancybox\source\jquery.fancybox.pack.js" />
+    <Content Include="Front End\vendors\font-awesome\css\font-awesome.css" />
+    <Content Include="Front End\vendors\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Front End\vendors\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Front End\vendors\gridmanager-master\.gitattributes" />
+    <Content Include="Front End\vendors\gridmanager-master\.gitignore" />
+    <Content Include="Front End\vendors\gridmanager-master\dist\css\jquery.gridmanager-dark.css" />
+    <Content Include="Front End\vendors\gridmanager-master\dist\css\jquery.gridmanager-light.css" />
+    <Content Include="Front End\vendors\gridmanager-master\dist\css\jquery.gridmanager.css" />
+    <Content Include="Front End\vendors\gridmanager-master\dist\js\jquery.gridmanager.js" />
+    <Content Include="Front End\vendors\gridmanager-master\dist\js\jquery.gridmanager.min.js" />
+    <Content Include="Front End\vendors\icheck\icheck.js" />
+    <Content Include="Front End\vendors\icheck\icheck.min.js" />
+    <Content Include="Front End\vendors\icheck\skins\all.css" />
+    <Content Include="Front End\vendors\icheck\skins\flat\aero%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\aero.css" />
+    <Content Include="Front End\vendors\icheck\skins\flat\aero.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\blue%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\blue.css" />
+    <Content Include="Front End\vendors\icheck\skins\flat\blue.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\flat%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\flat.css" />
+    <Content Include="Front End\vendors\icheck\skins\flat\flat.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\green%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\green.css" />
+    <Content Include="Front End\vendors\icheck\skins\flat\green.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\grey%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\grey.css" />
+    <Content Include="Front End\vendors\icheck\skins\flat\grey.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\orange%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\orange.css" />
+    <Content Include="Front End\vendors\icheck\skins\flat\orange.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\pink%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\pink.css" />
+    <Content Include="Front End\vendors\icheck\skins\flat\pink.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\purple%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\purple.css" />
+    <Content Include="Front End\vendors\icheck\skins\flat\purple.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\red%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\red.css" />
+    <Content Include="Front End\vendors\icheck\skins\flat\red.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\yellow%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\yellow.css" />
+    <Content Include="Front End\vendors\icheck\skins\flat\yellow.png" />
+    <Content Include="Front End\vendors\icheck\skins\flat\_all.css" />
+    <Content Include="Front End\vendors\icheck\skins\futurico\futurico%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\futurico\futurico.css" />
+    <Content Include="Front End\vendors\icheck\skins\futurico\futurico.png" />
+    <Content Include="Front End\vendors\icheck\skins\line\aero.css" />
+    <Content Include="Front End\vendors\icheck\skins\line\blue.css" />
+    <Content Include="Front End\vendors\icheck\skins\line\green.css" />
+    <Content Include="Front End\vendors\icheck\skins\line\grey.css" />
+    <Content Include="Front End\vendors\icheck\skins\line\line%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\line\line.css" />
+    <Content Include="Front End\vendors\icheck\skins\line\line.png" />
+    <Content Include="Front End\vendors\icheck\skins\line\orange.css" />
+    <Content Include="Front End\vendors\icheck\skins\line\pink.css" />
+    <Content Include="Front End\vendors\icheck\skins\line\purple.css" />
+    <Content Include="Front End\vendors\icheck\skins\line\red.css" />
+    <Content Include="Front End\vendors\icheck\skins\line\yellow.css" />
+    <Content Include="Front End\vendors\icheck\skins\line\_all.css" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\aero%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\aero.css" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\aero.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\blue%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\blue.css" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\blue.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\green%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\green.css" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\green.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\grey%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\grey.css" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\grey.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\minimal%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\minimal.css" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\minimal.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\orange%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\orange.css" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\orange.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\pink%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\pink.css" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\pink.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\purple%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\purple.css" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\purple.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\red%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\red.css" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\red.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\yellow%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\yellow.css" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\yellow.png" />
+    <Content Include="Front End\vendors\icheck\skins\minimal\_all.css" />
+    <Content Include="Front End\vendors\icheck\skins\polaris\polaris%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\polaris\polaris.css" />
+    <Content Include="Front End\vendors\icheck\skins\polaris\polaris.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\aero%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\aero.css" />
+    <Content Include="Front End\vendors\icheck\skins\square\aero.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\blue%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\blue.css" />
+    <Content Include="Front End\vendors\icheck\skins\square\blue.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\green%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\green.css" />
+    <Content Include="Front End\vendors\icheck\skins\square\green.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\grey%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\grey.css" />
+    <Content Include="Front End\vendors\icheck\skins\square\grey.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\orange%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\orange.css" />
+    <Content Include="Front End\vendors\icheck\skins\square\orange.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\pink%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\pink.css" />
+    <Content Include="Front End\vendors\icheck\skins\square\pink.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\purple%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\purple.css" />
+    <Content Include="Front End\vendors\icheck\skins\square\purple.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\red%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\red.css" />
+    <Content Include="Front End\vendors\icheck\skins\square\red.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\square%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\square.css" />
+    <Content Include="Front End\vendors\icheck\skins\square\square.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\yellow%402x.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\yellow.css" />
+    <Content Include="Front End\vendors\icheck\skins\square\yellow.png" />
+    <Content Include="Front End\vendors\icheck\skins\square\_all.css" />
+    <Content Include="Front End\vendors\livicons\developer\jquery-1.11.1.js" />
+    <Content Include="Front End\vendors\livicons\developer\json2.js" />
+    <Content Include="Front End\vendors\livicons\developer\livicons-1.4.js" />
+    <Content Include="Front End\vendors\livicons\developer\raphael.js" />
+    <Content Include="Front End\vendors\livicons\minified\jquery-1.11.1.min.js" />
+    <Content Include="Front End\vendors\livicons\minified\json2.min.js" />
+    <Content Include="Front End\vendors\livicons\minified\livicons-1.4.min.js" />
+    <Content Include="Front End\vendors\livicons\minified\raphael-min.js" />
+    <Content Include="Front End\vendors\livicons\readme.txt" />
+    <Content Include="Front End\vendors\mega-master\css\bootstrap-responsive.min.css" />
+    <Content Include="Front End\vendors\mega-master\css\bootstrap.min.css" />
+    <Content Include="Front End\vendors\mega-master\css\yamm.css" />
+    <Content Include="Front End\vendors\mixitup\src\jquery.mixitup.js" />
+    <Content Include="Front End\vendors\modal\css\component.css" />
+    <Content Include="Front End\vendors\modal\js\Accordion Wizard for Bootstrap 3.html" />
+    <Content Include="Front End\vendors\modal\js\Accordion Wizard for Bootstrap 3_files\acc-wizard.min.js" />
+    <Content Include="Front End\vendors\modal\js\Accordion Wizard for Bootstrap 3_files\bootstrap.min.js" />
+    <Content Include="Front End\vendors\modal\js\Accordion Wizard for Bootstrap 3_files\jquery.min.js" />
+    <Content Include="Front End\vendors\modal\js\classie.js" />
+    <Content Include="Front End\vendors\modal\js\css-filters-polyfill.js" />
+    <Content Include="Front End\vendors\modal\js\cssParser.js" />
+    <Content Include="Front End\vendors\modal\js\modalEffects.js" />
+    <Content Include="Front End\vendors\modal\js\modernizr.custom.js" />
+    <Content Include="Front End\vendors\owl-carousel\AjaxLoader.gif" />
+    <Content Include="Front End\vendors\owl-carousel\grabbing.png" />
+    <Content Include="Front End\vendors\owl-carousel\owl.carousel.css" />
+    <Content Include="Front End\vendors\owl-carousel\owl.carousel.js" />
+    <Content Include="Front End\vendors\owl-carousel\owl.carousel.min.js" />
+    <Content Include="Front End\vendors\owl-carousel\owl.theme.css" />
+    <Content Include="Front End\vendors\owl-carousel\owl.transitions.css" />
+    <Content Include="Front End\vendors\product-view\.gitignore" />
+    <Content Include="Front End\vendors\product-view\css\reset.css" />
+    <Content Include="Front End\vendors\product-view\css\style.css" />
+    <Content Include="Front End\vendors\product-view\index.html" />
+    <Content Include="Front End\vendors\product-view\js\jquery-2.1.1.js" />
+    <Content Include="Front End\vendors\product-view\js\main.js" />
+    <Content Include="Front End\vendors\product-view\js\modernizr.js" />
+    <Content Include="Front End\vendors\product-view\js\velocity.min.js" />
+    <Content Include="Front End\vendors\switchery\.gitignore" />
+    <Content Include="Front End\vendors\switchery\switchery.css" />
+    <Content Include="Front End\vendors\switchery\switchery.js" />
+    <Content Include="Front End\vendors\switchery\switchery.min.css" />
+    <Content Include="Front End\vendors\switchery\switchery.min.js" />
+    <Content Include="Front End\vendors\switch\css\bootstrap2\bootstrap-switch.css" />
+    <Content Include="Front End\vendors\switch\css\bootstrap2\bootstrap-switch.min.css" />
+    <Content Include="Front End\vendors\switch\css\bootstrap3\bootstrap-switch.css" />
+    <Content Include="Front End\vendors\switch\css\bootstrap3\bootstrap-switch.min.css" />
+    <Content Include="Front End\vendors\switch\js\bootstrap-switch.js" />
+    <Content Include="Front End\vendors\switch\js\bootstrap-switch.min.js" />
+    <Content Include="Front End\vendors\tags\app.css" />
+    <Content Include="Front End\vendors\tags\assets\app.css" />
+    <Content Include="Front End\vendors\tags\assets\app.js" />
+    <Content Include="Front End\vendors\tags\assets\app_bs2.js" />
+    <Content Include="Front End\vendors\tags\assets\app_bs3.js" />
+    <Content Include="Front End\vendors\tags\bootstrap-tagsinput.css" />
+    <Content Include="Front End\vendors\tags\bower_components\angular\angular.js" />
+    <Content Include="Front End\vendors\tags\bower_components\angular\angular.min.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\css\docs.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\css\pygments-manni.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\ico\favicon.png" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\js\application.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\js\customizer.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\js\filesaver.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\js\holder.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\js\html5shiv.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\js\jquery.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\js\jszip.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\js\less.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\js\raw-files.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\js\respond.min.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\assets\js\uglify.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\components.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\css.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\customize.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\carousel\carousel.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\carousel\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\grid\grid.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\grid\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\jumbotron-narrow\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\jumbotron-narrow\jumbotron-narrow.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\jumbotron\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\jumbotron\jumbotron.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\justified-nav\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\justified-nav\justified-nav.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\navbar-fixed-top\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\navbar-fixed-top\navbar-fixed-top.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\navbar-static-top\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\navbar-static-top\navbar-static-top.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\navbar\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\navbar\navbar.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\non-responsive\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\non-responsive\non-responsive.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\offcanvas\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\offcanvas\offcanvas.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\offcanvas\offcanvas.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\screenshots\carousel.jpg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\screenshots\grid.jpg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\screenshots\jumbotron-narrow.jpg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\screenshots\jumbotron.jpg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\screenshots\justified-nav.jpg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\screenshots\navbar-fixed.jpg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\screenshots\navbar-static.jpg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\screenshots\navbar.jpg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\screenshots\non-responsive.jpg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\screenshots\offcanvas.jpg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\screenshots\sign-in.jpg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\screenshots\starter-template.jpg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\screenshots\sticky-footer-navbar.jpg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\screenshots\sticky-footer.jpg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\screenshots\theme.jpg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\signin\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\signin\signin.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\starter-template\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\starter-template\starter-template.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\sticky-footer-navbar\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\sticky-footer-navbar\sticky-footer-navbar.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\sticky-footer\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\sticky-footer\sticky-footer.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\theme\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\examples\theme\theme.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\getting-started.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\Gruntfile.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\javascript.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\affix.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\alert.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\button.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\carousel.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\collapse.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\dropdown.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\modal.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\popover.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\scrollspy.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tab.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\phantom.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\server.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\unit\affix.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\unit\alert.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\unit\button.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\unit\carousel.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\unit\collapse.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\unit\dropdown.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\unit\modal.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\unit\phantom.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\unit\popover.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\unit\scrollspy.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\unit\tab.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\unit\tooltip.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\unit\transition.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\vendor\jquery.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\vendor\qunit.css" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tests\vendor\qunit.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\tooltip.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\js\transition.js" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\_includes\ads.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\_includes\footer.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\_includes\header.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\_includes\nav-components.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\_includes\nav-css.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\_includes\nav-customize.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\_includes\nav-getting-started.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\_includes\nav-javascript.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\_includes\nav-main.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\_includes\old-bs-docs.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\_includes\social-buttons.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\_layouts\default.html" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\_layouts\home.html" />
+    <Content Include="Front End\vendors\tags\bower_components\google-code-prettify-lite\prettify.css" />
+    <Content Include="Front End\vendors\tags\bower_components\google-code-prettify-lite\prettify.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\.gitignore" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\.gitmodules" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\lib\compiler.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\lib\hogan.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\lib\template.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\test\html\list.html" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\test\hulk.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\test\index.html" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\test\index.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\test\jquery.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\test\json2.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\test\mustache.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\test\phantom-js-loader.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\test\run.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\test\spec.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\test\specWithGet.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\tools\release.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\tools\web_templates.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\1.0.0\hogan.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\1.0.0\hogan.min.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.0\hogan.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.0\hogan.min.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.3\hogan.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.3\hogan.min.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.4\hogan-1.0.4.amd.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.4\hogan-1.0.4.common.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.4\hogan-1.0.4.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.4\hogan-1.0.4.min.amd.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.4\hogan-1.0.4.min.common.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.4\hogan-1.0.4.min.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.4\hogan-1.0.4.min.mustache.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.4\hogan-1.0.4.mustache.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.4\template-1.0.4.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.4\template-1.0.4.min.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.5\hogan-1.0.5.amd.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.5\hogan-1.0.5.common.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.5\hogan-1.0.5.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.5\hogan-1.0.5.min.amd.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.5\hogan-1.0.5.min.common.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.5\hogan-1.0.5.min.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.5\hogan-1.0.5.min.mustache.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.5\hogan-1.0.5.mustache.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.5\template-1.0.5.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\1.0.5\template-1.0.5.min.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\2.0.0\hogan-2.0.0.amd.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\2.0.0\hogan-2.0.0.common.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\2.0.0\hogan-2.0.0.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\2.0.0\hogan-2.0.0.min.amd.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\2.0.0\hogan-2.0.0.min.common.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\2.0.0\hogan-2.0.0.min.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\2.0.0\hogan-2.0.0.min.mustache.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\2.0.0\hogan-2.0.0.mustache.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\2.0.0\template-2.0.0.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\builds\2.0.0\template-2.0.0.min.js" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\favicon.ico" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\images\logo.png" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\images\noise.png" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\images\small-hogan-icon.png" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\images\stripes.png" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\stylesheets\layout.css" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\stylesheets\skeleton.css" />
+    <Content Include="Front End\vendors\tags\bower_components\jquery\.gitignore" />
+    <Content Include="Front End\vendors\tags\bower_components\jquery\jquery-migrate.js" />
+    <Content Include="Front End\vendors\tags\bower_components\jquery\jquery-migrate.min.js" />
+    <Content Include="Front End\vendors\tags\bower_components\jquery\jquery.js" />
+    <Content Include="Front End\vendors\tags\bower_components\jquery\jquery.min.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\.gitignore" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\dist\typeahead.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\dist\typeahead.min.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\Gruntfile.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\src\dataset.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\src\dropdown_view.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\src\event_bus.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\src\event_target.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\src\input_view.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\src\persistent_storage.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\src\request_cache.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\src\transport.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\src\typeahead.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\src\typeahead_view.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\src\utils.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\src\version.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\test\dataset_spec.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\test\dropdown_view_spec.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\test\event_target_spec.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\test\helpers\jasmine-jquery.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\test\helpers\mock-ajax.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\test\helpers\mock_components.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\test\input_view_spec.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\test\persistent_storage_spec.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\test\playground.html" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\test\request_cache_spec.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\test\transport_spec.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\test\typeahead_view_spec.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\test\vendor\hogan-2.0.0.js" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\test\vendor\jquery-1.9.1.js" />
+    <Content Include="Front End\vendors\tags\dist\bootstrap-tagsinput-angular.js" />
+    <Content Include="Front End\vendors\tags\dist\bootstrap-tagsinput.css" />
+    <Content Include="Front End\vendors\tags\dist\bootstrap-tagsinput.js" />
+    <Content Include="Front End\vendors\tags\dist\bootstrap-tagsinput.min.js" />
+    <Content Include="Front End\vendors\tags\dist\old\bsTagsInput.js" />
+    <Content Include="Front End\vendors\tags\dist\old\readme.txt" />
+    <Content Include="Front End\vendors\tags\docs.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Front End\css\bootstrap.css.map" />
+    <Content Include="Front End\fonts\fontawesome-webfont.eot" />
+    <Content Include="Front End\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Front End\fonts\fontawesome-webfont.woff" />
+    <Content Include="Front End\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Front End\fonts\FontAwesome.otf" />
+    <Content Include="Front End\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Front End\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Front End\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Front End\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Front End\vendors\bootstrap-rating-master\bower.json" />
+    <Content Include="Front End\vendors\bootstrap-rating-master\LICENSE.md" />
+    <Content Include="Front End\vendors\bootstrap-rating-master\package.json" />
+    <Content Include="Front End\vendors\bootstrap-rating-master\README.md" />
+    <Content Include="Front End\vendors\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Front End\vendors\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Front End\vendors\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Front End\vendors\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Front End\vendors\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Front End\vendors\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Front End\vendors\devicon\devicon.json" />
+    <Content Include="Front End\vendors\devicon\fonts\devicon.eot" />
+    <Content Include="Front End\vendors\devicon\fonts\devicon.ttf" />
+    <Content Include="Front End\vendors\devicon\fonts\devicon.woff" />
+    <Content Include="Front End\vendors\devicon\icons\amazonwebservices\amazonwebservices.eps" />
+    <Content Include="Front End\vendors\devicon\icons\android\android.eps" />
+    <Content Include="Front End\vendors\devicon\icons\angularjs\angularjs.eps" />
+    <Content Include="Front End\vendors\devicon\icons\apache\apache.eps" />
+    <Content Include="Front End\vendors\devicon\icons\appcelerator\appcelerator.eps" />
+    <Content Include="Front End\vendors\devicon\icons\apple\apple.eps" />
+    <Content Include="Front End\vendors\devicon\icons\atom\atom.eps" />
+    <Content Include="Front End\vendors\devicon\icons\backbonejs\backbonejs.eps" />
+    <Content Include="Front End\vendors\devicon\icons\bootstrap\bootstrap.eps" />
+    <Content Include="Front End\vendors\devicon\icons\bower\bower.eps" />
+    <Content Include="Front End\vendors\devicon\icons\chrome\chrome.eps" />
+    <Content Include="Front End\vendors\devicon\icons\codeigniter\codeigniter.eps" />
+    <Content Include="Front End\vendors\devicon\icons\coffeescript\coffeescript.eps" />
+    <Content Include="Front End\vendors\devicon\icons\cplusplus\cplusplus.eps" />
+    <Content Include="Front End\vendors\devicon\icons\csharp\csharp.eps" />
+    <Content Include="Front End\vendors\devicon\icons\css3\css3.eps" />
+    <Content Include="Front End\vendors\devicon\icons\c\c.eps" />
+    <Content Include="Front End\vendors\devicon\icons\debian\debian.eps" />
+    <Content Include="Front End\vendors\devicon\icons\docker\docker.eps" />
+    <Content Include="Front End\vendors\devicon\icons\doctrine\doctrine.eps" />
+    <Content Include="Front End\vendors\devicon\icons\dot-net\dot-net.eps" />
+    <Content Include="Front End\vendors\devicon\icons\drupal\drupal.eps" />
+    <Content Include="Front End\vendors\devicon\icons\erlang\erlang.eps" />
+    <Content Include="Front End\vendors\devicon\icons\firefox\firefox.eps" />
+    <Content Include="Front End\vendors\devicon\icons\foundation\foundation.eps" />
+    <Content Include="Front End\vendors\devicon\icons\gimp\gimp.eps" />
+    <Content Include="Front End\vendors\devicon\icons\git\git.eps" />
+    <Content Include="Front End\vendors\devicon\icons\go\go.eps" />
+    <Content Include="Front End\vendors\devicon\icons\grunt\grunt.eps" />
+    <Content Include="Front End\vendors\devicon\icons\gulp\gulp.eps" />
+    <Content Include="Front End\vendors\devicon\icons\heroku\heroku.eps" />
+    <Content Include="Front End\vendors\devicon\icons\html5\html5.eps" />
+    <Content Include="Front End\vendors\devicon\icons\ie10\ie10.eps" />
+    <Content Include="Front End\vendors\devicon\icons\illustrator\illustrator.eps" />
+    <Content Include="Front End\vendors\devicon\icons\inkscape\inkscape.eps" />
+    <Content Include="Front End\vendors\devicon\icons\javascript\javascript.eps" />
+    <Content Include="Front End\vendors\devicon\icons\java\java.eps" />
+    <Content Include="Front End\vendors\devicon\icons\jquery\jquery.eps" />
+    <Content Include="Front End\vendors\devicon\icons\krakenjs\krakenjs.eps" />
+    <Content Include="Front End\vendors\devicon\icons\laravel\laravel.eps" />
+    <Content Include="Front End\vendors\devicon\icons\less\less.eps" />
+    <Content Include="Front End\vendors\devicon\icons\linux\linux.eps" />
+    <Content Include="Front End\vendors\devicon\icons\meteor\meteor.eps" />
+    <Content Include="Front End\vendors\devicon\icons\mongodb\mongodb.eps" />
+    <Content Include="Front End\vendors\devicon\icons\moodle\moodle.eps" />
+    <Content Include="Front End\vendors\devicon\icons\mysql\mysql.eps" />
+    <Content Include="Front End\vendors\devicon\icons\nginx\nginx.eps" />
+    <Content Include="Front End\vendors\devicon\icons\nodejs\nodejs.eps" />
+    <Content Include="Front End\vendors\devicon\icons\nodewebkit\nodewebkit.eps" />
+    <Content Include="Front End\vendors\devicon\icons\oracle\oracle.eps" />
+    <Content Include="Front End\vendors\devicon\icons\photoshop\photoshop.eps" />
+    <Content Include="Front End\vendors\devicon\icons\php\php.eps" />
+    <Content Include="Front End\vendors\devicon\icons\postgresql\postgresql.eps" />
+    <Content Include="Front End\vendors\devicon\icons\python\python.eps" />
+    <Content Include="Front End\vendors\devicon\icons\rails\rails.eps" />
+    <Content Include="Front End\vendors\devicon\icons\react\react.eps" />
+    <Content Include="Front End\vendors\devicon\icons\redhat\redhat.eps" />
+    <Content Include="Front End\vendors\devicon\icons\redis\redis.eps" />
+    <Content Include="Front End\vendors\devicon\icons\ruby\ruby.eps" />
+    <Content Include="Front End\vendors\devicon\icons\sass\sass.eps" />
+    <Content Include="Front End\vendors\devicon\icons\symfony\symfony.eps" />
+    <Content Include="Front End\vendors\devicon\icons\travis\travis.eps" />
+    <Content Include="Front End\vendors\devicon\icons\trello\trello.eps" />
+    <Content Include="Front End\vendors\devicon\icons\ubuntu\ubuntu.eps" />
+    <Content Include="Front End\vendors\devicon\icons\vim\vim.eps" />
+    <Content Include="Front End\vendors\devicon\icons\windows8\windows8.eps" />
+    <Content Include="Front End\vendors\devicon\icons\wordpress\wordpress.eps" />
+    <Content Include="Front End\vendors\devicon\icons\yii\yii.eps" />
+    <Content Include="Front End\vendors\devicon\icons\zend\zend.eps" />
+    <Content Include="Front End\vendors\fancybox\CHANGELOG.md" />
+    <Content Include="Front End\vendors\fancybox\README.md" />
+    <Content Include="Front End\vendors\fancybox\sprite.psd" />
+    <Content Include="Front End\vendors\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Front End\vendors\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Front End\vendors\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Front End\vendors\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Front End\vendors\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Front End\vendors\font-awesome\less\animated.less" />
+    <Content Include="Front End\vendors\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Front End\vendors\font-awesome\less\core.less" />
+    <Content Include="Front End\vendors\font-awesome\less\fixed-width.less" />
+    <Content Include="Front End\vendors\font-awesome\less\font-awesome.less" />
+    <Content Include="Front End\vendors\font-awesome\less\icons.less" />
+    <Content Include="Front End\vendors\font-awesome\less\larger.less" />
+    <Content Include="Front End\vendors\font-awesome\less\list.less" />
+    <Content Include="Front End\vendors\font-awesome\less\mixins.less" />
+    <Content Include="Front End\vendors\font-awesome\less\path.less" />
+    <Content Include="Front End\vendors\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Front End\vendors\font-awesome\less\stacked.less" />
+    <Content Include="Front End\vendors\font-awesome\less\variables.less" />
+    <Content Include="Front End\vendors\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Front End\vendors\font-awesome\scss\_animated.scss" />
+    <Content Include="Front End\vendors\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Front End\vendors\font-awesome\scss\_core.scss" />
+    <Content Include="Front End\vendors\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Front End\vendors\font-awesome\scss\_icons.scss" />
+    <Content Include="Front End\vendors\font-awesome\scss\_larger.scss" />
+    <Content Include="Front End\vendors\font-awesome\scss\_list.scss" />
+    <Content Include="Front End\vendors\font-awesome\scss\_mixins.scss" />
+    <Content Include="Front End\vendors\font-awesome\scss\_path.scss" />
+    <Content Include="Front End\vendors\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Front End\vendors\font-awesome\scss\_stacked.scss" />
+    <Content Include="Front End\vendors\font-awesome\scss\_variables.scss" />
+    <Content Include="Front End\vendors\gridmanager-master\.bowerrc" />
+    <Content Include="Front End\vendors\gridmanager-master\.editorconfig" />
+    <Content Include="Front End\vendors\gridmanager-master\.jshintrc" />
+    <Content Include="Front End\vendors\gridmanager-master\.travis.yml" />
+    <Content Include="Front End\vendors\mixitup\LICENSE.md" />
+    <Content Include="Front End\vendors\mixitup\README.md" />
+    <Content Include="Front End\vendors\product-view\js\velocity-LICENSE.md" />
+    <Content Include="Front End\vendors\tags\assets\cities.json" />
+    <Content Include="Front End\vendors\tags\assets\citynames.json" />
+    <Content Include="Front End\vendors\tags\bower_components\angular\.bower.json" />
+    <Content Include="Front End\vendors\tags\bower_components\angular\bower.json" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\.bower.json" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\bower.json" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\browserstack.json" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\CNAME" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\composer.json" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\CONTRIBUTING.md" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\alerts.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\badges.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\bootstrap.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\breadcrumbs.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\button-groups.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\buttons.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\carousel.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\close.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\code.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\component-animations.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\dropdowns.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\forms.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\glyphicons.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\grid.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\input-groups.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\jumbotron.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\labels.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\list-group.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\media.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\mixins.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\modals.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\navbar.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\navs.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\normalize.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\pager.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\pagination.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\panels.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\popovers.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\print.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\progress-bars.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\responsive-utilities.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\scaffolding.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\tables.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\theme.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\thumbnails.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\tooltip.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\type.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\utilities.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\variables.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\less\wells.less" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\LICENSE" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\package.json" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\README.md" />
+    <Content Include="Front End\vendors\tags\bower_components\bootstrap\_config.yml" />
+    <Content Include="Front End\vendors\tags\bower_components\google-code-prettify-lite\.bower.json" />
+    <Content Include="Front End\vendors\tags\bower_components\google-code-prettify-lite\component.json" />
+    <Content Include="Front End\vendors\tags\bower_components\google-code-prettify-lite\README.md" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\.bower.json" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\.npmignore" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\.travis.yml" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\bin\hulk" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\component.json" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\LICENSE" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\Makefile" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\package.json" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\README.md" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\test\templates\list.mustache" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\web\index.html.mustache" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\wrappers\amd.js.mustache" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\wrappers\common.js.mustache" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\wrappers\js.mustache" />
+    <Content Include="Front End\vendors\tags\bower_components\hogan\wrappers\mustache.js.mustache" />
+    <Content Include="Front End\vendors\tags\bower_components\jquery\.bower.json" />
+    <Content Include="Front End\vendors\tags\bower_components\jquery\bower.json" />
+    <Content Include="Front End\vendors\tags\bower_components\jquery\component.json" />
+    <Content Include="Front End\vendors\tags\bower_components\jquery\composer.json" />
+    <Content Include="Front End\vendors\tags\bower_components\jquery\jquery.min.map" />
+    <Content Include="Front End\vendors\tags\bower_components\jquery\package.json" />
+    <Content Include="Front End\vendors\tags\bower_components\jquery\README.md" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\.bower.json" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\.jshintrc" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\.travis.yml" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\CHANGELOG.md" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\component.json" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\CONTRIBUTING.md" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\LICENSE" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\package.json" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\README.md" />
+    <Content Include="Front End\vendors\tags\bower_components\typeahead.js\typeahead.js.jquery.json" />
+    <Content Include="Front End\vendors\tags\dist\bootstrap-tagsinput.less" />
+    <Content Include="Front End\vendors\tags\dist\bootstrap-tagsinput.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Scripts\jquery-3.5.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.5.1.js" />
+    <Content Include="Scripts\jquery-3.5.1.min.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_layoutAdmin.cshtml" />
+    <Content Include="Views\Shared\_LayoutClient.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Annonce\Edit.cshtml" />
+    <Content Include="Views\Annonce\CreateM.cshtml" />
+    <Content Include="Views\Shared\Client.cshtml" />
+    <Content Include="Views\Annonce\_DisplayAnnonce.cshtml" />
+    <Content Include="Views\Annonce\Create.cshtml" />
+    <Content Include="Views\Annonce\CreateAppartement.cshtml" />
+    <Content Include="Views\Annonce\CreateAppartementV.cshtml" />
+    <Content Include="Views\Annonce\CreateStudio.cshtml" />
+    <Content Include="Views\Annonce\CreateStudioV.cshtml" />
+    <Content Include="Views\Annonce\CreateTerrain.cshtml" />
+    <Content Include="Views\Annonce\AfficherMaisonV.cshtml" />
+    <Content Include="Views\Annonce\AfficheAppartementV.cshtml" />
+    <Content Include="Views\Annonce\AfficheStudioV.cshtml" />
+    <Content Include="Views\Annonce\AfficheTerrainV.cshtml" />
+    <Content Include="Views\Annonce\AfficheAppartementL.cshtml" />
+    <Content Include="Views\Annonce\AfficherMaisonL.cshtml" />
+    <Content Include="Views\Annonce\AfficheStudioL.cshtml" />
+    <Content Include="Views\Shared\Owner.cshtml" />
+    <Content Include="Views\Annonce\Details.cshtml" />
+    <Content Include="Views\Annonce\MesAnnonce.cshtml" />
+    <Content Include="Views\Annonce\Index.cshtml" />
+    <Content Include="Views\Annonce\Delete.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Meuble\Create.cshtml" />
+    <Content Include="Views\Meuble\AfficherMeuble.cshtml" />
+    <Content Include="Views\Meuble\Details.cshtml" />
+    <Content Include="Views\Meuble\Delete.cshtml" />
+    <Content Include="Views\Interresse\AddLike.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.5.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Service.Pattern\Service.Pattern.csproj">
+      <Project>{55c21f7d-4c89-4051-8c58-b91881eb668c}</Project>
+      <Name>Service.Pattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solution.Data\Solution.Data.csproj">
+      <Project>{E08A17C8-A617-448E-9B5A-5170C11F1DDF}</Project>
+      <Name>Solution.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solution.Domain\Solution.Domain.csproj">
+      <Project>{9ffed16b-ee87-404c-9d3f-1bff425d5f41}</Project>
+      <Name>Solution.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solution.Service\Solution.Service.csproj">
+      <Project>{ebcb25f5-49a8-4224-8069-f078a356a522}</Project>
+      <Name>Solution.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6415</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44326/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

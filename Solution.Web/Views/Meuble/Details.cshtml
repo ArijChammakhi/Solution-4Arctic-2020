@@ -1,0 +1,95 @@
+﻿@model Solution.Web.Models.MeubleVm
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Client.cshtml";
+}
+
+
+
+<div class="row ">
+    <div class="text-center">
+        <h3 class="border-success"><span class="heading_border bg-success">Voici touts les coordoneés du Meuble</span></h3>
+    </div>
+
+    <!-- left Section Start -->
+
+</div>
+
+
+<div class="container">
+    <div class="row details">
+
+        <!-- Slider Section Start -->
+        <div class="col-md-6">
+            <div class="col-md-5 col-sm-12 slider">
+                <div id="owl-demo" class="owl-carousel owl-theme" style="opacity:1; display:block;">
+                    <div class="owl-wrapper-outer" style="width :3144px; left:0px; display:block ;">
+                        <div class="owl-item" style="width:524px;">
+                            <div class="item">
+                                <img src="~/Content/@Model.Image" alt="slider-image" class="img-responsive">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- //Slider Section End -->
+        <!-- Project Description Section Start -->
+        <div class="col-md-6">
+            <h3 class="project">Description de L'Annonce</h3>
+          
+                <div class="text-justify">
+                    <ul>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Son nom est : @Model.Titre</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i>prix est : @Model.PrixM</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i>Date de Publication  :  @Model.OutDate</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Description : @Model.Description</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Lieu du proprietaire :@Model.Adresse</li>
+
+                    </ul>
+
+                </div>
+           
+           
+
+
+            <div class="input-group">
+                <table>
+
+                    {% for i in inter if evenement is same as(i.evenement) and user is same as(i.idUser)%}
+                    <label> Vous Etes Deja Interesse</label>
+                    {% else  %}
+                    <li><a id="btn" class=" btn btn-primary" href="{{ path('ajoutinter',{'ide':evenement.id}) }} "><span class="text-white"><i class="livicon" data-name="hand-right" data-size="24" data-loop="true" data-c="#fff" data-hc="white"></i></span></a></li>
+                    {% endfor %}
+                </table>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<!-- //Project Description Section End -->
+
+<br>
+<br>
+<th>Partage</th>
+<td>{{ socialButtons() }}</td>
+<br>
+<br>
+
+
+<script src="{{asset ("js/jquery.js") }}"></script>
+<script>
+    $('#btn').click(
+        function () {
+            $('table').hide();
+        }
+    )</script>

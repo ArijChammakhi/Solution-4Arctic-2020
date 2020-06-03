@@ -1,0 +1,97 @@
+﻿@model Solution.Web.Models.AnnonceVM
+@{ string path = "~/Content/" + @Model.ImageBi;}
+
+@{
+    ViewBag.Title = "_DisplayAnnonce";
+   
+
+}
+
+
+<div class="container">
+    <br>
+
+   
+
+
+                    <br />
+                    <h5 class="text-primary">Voici les coordoneés de l'Annonce</h5>
+                    @*<img src="{{ asset('/images/iheb/') }}{{ evenement.images }}" style="width: 150px; height: 150px">*@
+                    <img src="@Url.Content(path)" alt="post-image" class="img-responsive post-image" style=width: 150px; height: 150px />
+                    <ul>
+
+
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Son nom est : @Model.Titre</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Date  :@Model.DateAnnonce</li>
+
+                    </ul>
+
+                    <a class="btn btn-primary btn-block text-white" href="{{ path("affiche_evenement",{'id':evenement.id} )}}">View</a>
+
+                    <a class="btn btn-primary btn-block text-white" href="{{ path("ajoutReservation",{'idE':evenement.id}) }}">
+                        Contacter
+                        propriétaire
+                    </a>
+                </div>
+     
+<br>
+<br>
+<br>
+<br>
+
+
+
+<script src="~/Front End/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript" src="~/Front End/js/jquery.min.js"></script>
+<script type="text/javascript" src="~/Front End/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="~/Front End/js/raphael.js"></script>
+<script type="text/javascript" src="~/Front End/js/livicons-1.4.min.js"></script>
+<script type="text/javascript" src="~/Front End/js/josh_frontend.js"></script>
+<!--global js end-->
+<!-- page level js starts-->
+<script type="text/javascript" src="~/Front End/js/jquery.circliful.js"></script>
+<script type="text/javascript" src="~/Front End/vendors/owl-carousel/owl.carousel.js"></script>
+<script type="text/javascript" src="~/Front End/js/carousel.js"></script>
+<script type="text/javascript" src="~/Front End/js/index.js"></script>
+<!--page level js ends-->
+<!--global css starts-->
+<link rel="stylesheet" type="text/css" href="~/Front End/css/bootstrap.min.css">
+<link rel="shortcut icon" href="~/Front End/images/favicon.png" type="image/x-icon">
+<link rel="icon" href="~/Front End/images/favicon.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="~/Front End/css/custom.css">
+<!--end of global css-->
+<!--page level css starts-->
+<link rel="stylesheet" type="text/css" href="~/Front End/css/tabbular.css">
+<link rel="stylesheet" type="text/css" href="~/Front End/css/jquery.circliful.css">
+<link rel="stylesheet" type="text/css" href="~/Front End/vendors/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="~/Front End/vendors/owl-carousel/owl.theme.css">
+<!--end of page level css-->
+<link rel="stylesheet" type="text/css" href="~/Front End/css/bootstrap.min.css">
+<link rel="shortcut icon" href="~/Front End/images/favicon.png" type="image/x-icon">
+<link rel="icon" href="~/Front End/images/favicon.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="~/Front End/css/custom.css">
+<link rel="stylesheet" type="text/css" href="~/Front End/css/shopping.css">
+<script src="~/Front End/util/jquery-3.3.1.min.js"></script>
+
+<script>
+
+
+        $(document).ready(function () {
+            $('#recherche').on('keyup', function () {
+                $search = $(this).val();
+                $.ajax({
+                    url: "{{ path('a_recherche') }}",
+                    data: {'search2': $search }
+                }).done(function (response) {
+                    $('.searching').html(response)
+                }).catch(function (err) {
+
+                });
+            });
+        });
+
+
+</script>
+
+}

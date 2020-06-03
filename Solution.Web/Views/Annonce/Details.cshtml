@@ -1,0 +1,204 @@
+﻿@model Solution.Web.Models.AnnonceVM
+@{ string path = "~/Content/" + Model.ImageBi;}
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Client.cshtml";
+}
+
+
+
+<div class="row ">
+    <div class="text-center">
+        <h3 class="border-success"><span class="heading_border bg-success">Voici touts les coordoneés de l'Annonce</span></h3>
+    </div>
+
+    <!-- left Section Start -->
+
+</div>
+
+
+<div class="container">
+    <div class="row details">
+
+        <!-- Slider Section Start -->
+        <div class="col-md-6">
+            <div class="col-md-5 col-sm-12 slider">
+                <div id="owl-demo" class="owl-carousel owl-theme" style="opacity:1; display:block;">
+                    <div class="owl-wrapper-outer" style="width :3144px; left:0px; display:block ;">
+                        <div class="owl-item" style="width:524px;">
+                            <div class="item">
+                                <img src="~/Content/@Model.ImageBi" alt="slider-image" class="img-responsive">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- //Slider Section End -->
+        <!-- Project Description Section Start -->
+        <div class="col-md-6">
+            <h3 class="project">Description de L'Annonce</h3>
+            @if (@Model.Type_Dannonce == "Maison" && @Model.type == 0)
+            {
+                <div class="text-justify">
+                    <ul>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Son nom est : @Model.Titre</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i>prix Mensuel  est : @Model.LoyerMensuel</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i>Date de Publication  :  @Model.DateAnnonce</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Description : @Model.Description</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Y'a t'il un Jardin: @Model.jardin</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Lieu de la maison :@Model.Localisation</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Nombre de Chambre:@Model.NombreDeChambre</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Status:@Model.statut</li>
+
+                    </ul>
+
+                </div>
+            }
+            @if (@Model.Type_Dannonce == "Maison" && @Model.type != 0)
+            {
+                <div class="text-justify">
+                    <ul>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Son nom est : @Model.Titre</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i>prix De la Maison est : @Model.PrixAchat</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i>Date de Publication  :  @Model.DateAnnonce</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Description : @Model.Description</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Y'a t'il un Jardin: @Model.jardin</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Lieu de la maison :@Model.Localisation</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Nombre de Chambre:@Model.NombreDeChambre</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Superficie:@Model.Superficie m^2</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Status:@Model.statut</li>
+
+                    </ul>
+
+                </div>
+            }
+            @if (@Model.Type_Dannonce == "Appartement" && @Model.type == 0)
+            {
+                <div class="text-justify">
+                    <ul>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Son nom est : @Model.Titre</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i>prix Mensuel  est : @Model.LoyerMensuel</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i>Date de Publication  :  @Model.DateAnnonce</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Description : @Model.Description</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Y'a t'il un Ascensseur: @Model.Ascensseur</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Lieu de l"appartement :@Model.Localisation</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Nombre de Chambre:@Model.NombreDeChambre</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Etage:@Model.Etage</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Status:@Model.statut</li>
+
+                    </ul>
+
+                </div>
+            }
+            @if (@Model.Type_Dannonce == "Appartement" && @Model.type != 0)
+            {
+                <div class="text-justify">
+                    <ul>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Son nom est : @Model.Titre</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i>prix de L'appartement est : @Model.PrixAchat</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i>Date de Publication  :  @Model.DateAnnonce</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Description : @Model.Description</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Y'a t'il un Ascensseur: @Model.Ascensseur</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Lieu de l"appartement :@Model.Localisation</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Nombre de Chambre:@Model.NombreDeChambre</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Etage:@Model.Etage</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Superficie:@Model.Superficie m^2</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Status:@Model.statut</li>
+
+                    </ul>
+
+                </div>
+            }
+            @if (@Model.Type_Dannonce == "Studio" && @Model.type != 0)
+            {
+                <div class="text-justify">
+                    <ul>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Son nom est : @Model.Titre</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i>prix du Studio est : @Model.PrixAchat</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i>Date de Publication  :  @Model.DateAnnonce</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Description : @Model.Description</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Lieu du Studio :@Model.Localisation</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Superficie:@Model.Superficie m^2</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Status:@Model.statut</li>
+
+                    </ul>
+
+                </div>
+            }
+            @if (@Model.Type_Dannonce == "Studio" && @Model.type == 0)
+            {
+                <div class="text-justify">
+                    <ul>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Son nom est : @Model.Titre</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i>prix Mensuel  est : @Model.LoyerMensuel</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i>Date de Publication  :  @Model.DateAnnonce</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Description : @Model.Description</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Lieu du Studio :@Model.Localisation</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Cuisine Equipé ?:@Model.CuisineEquipe</li>
+                        @if (@Model.typeStudio != 0)
+                        {
+                            <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Type studio:Studio Meublé</li>
+                        }
+                        @if (@Model.typeStudio == 0)
+                        {
+                            <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Type studio:Studio non Meublé</li>
+                        }
+
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Status:@Model.statut</li>
+
+                    </ul>
+
+                </div>
+            }
+            @if (@Model.Type_Dannonce == "Terrain" && @Model.type != 0)
+            {
+                <div class="text-justify">
+                    <ul>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Son nom est : @Model.Titre</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i>prix du Terrain est : @Model.PrixAchat</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i>Date de Publication  :  @Model.DateAnnonce</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Description : @Model.Description</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Lieu du Studio :@Model.Localisation</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Superficie:@Model.Superficie m^2</li>
+                        <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Status:@Model.statut</li>
+
+                    </ul>
+
+                </div>
+            }
+
+
+            <div class="input-group">
+                <table>
+
+                    {% for i in inter if evenement is same as(i.evenement) and user is same as(i.idUser)%}
+                    <label> Vous Etes Deja Interesse</label>
+                    {% else  %}
+                    <li><a id="btn" class=" btn btn-primary" href="@Url.Action("AddLike","Interresse", new { id = @Model.Id}) "><span class="text-white"><i class="livicon" data-name="hand-right" data-size="24" data-loop="true" data-c="#fff" data-hc="white"></i></span></a></li>
+                    {% endfor %}
+                </table>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<!-- //Project Description Section End -->
+
+<br>
+<br>
+
+<br>
+<br>
+
+
+

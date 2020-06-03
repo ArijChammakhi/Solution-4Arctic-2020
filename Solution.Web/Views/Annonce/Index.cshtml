@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Solution.Web.Models.AnnonceVM>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Client.cshtml";
+
+}
+
+
+        <div class="text-center">
+            <input type="text" class="form-control" placeholder="rechercher par Nom :" id="recherche" name="evenementrecherche" style="width: 200px">
+            <div class="searching">
+                <h3 class="border-success"><span class="heading_border bg-success">Voici la Liste de Tous Les Annonces</span></h3>
+
+
+                <br>
+                <br>
+
+
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail text-center">
+
+
+
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+
+
+
+
+
+                                @Html.Partial("_DisplayAnnonce", item);//injection de la vue partial
+
+
+                            }
+                        }
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <div class="navigation">
+                </div>
+            </div>
+        </div>
+ 
+

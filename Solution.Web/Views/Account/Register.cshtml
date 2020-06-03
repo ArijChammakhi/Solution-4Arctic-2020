@@ -1,0 +1,163 @@
+﻿@model Solution.Web.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register | Welcome to Dari </title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="shortcut icon" href="~/Front End/images/download.png" type="image/x-icon">
+    <link rel="icon" href="~/Front End/images/favicon.png" type="image/x-icon">
+
+    <link type="text/css" rel="stylesheet" href="~/Front End/vendors/icheck/skins/all.css" />
+    <link rel="stylesheet" type="text/css" href="~/Front End/css/register.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="box animation flipInX">
+                <img src="~/Front End/images/download.png" alt="logo" class="img-responsive mar">
+                <h3 class="text-primary">Register</h3>
+
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+
+
+                    @Html.ValidationSummary("", new { @class = "form-group" })
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.FirstName, new { @class = "sr-only" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @placeholder = "Firstname" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.LastName, new { @class = "sr-only" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @placeholder = "LastName" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email, new { @class = "sr-only" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control ", @placeholder = "Email" })
+                        </div>
+                    </div>
+                    @*<div class="form-group">
+                            @Html.LabelFor(m => m.Cin, new { @class = "sr-only" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Cin, new { @class = "form-control ", @placeholder = "Cin" })
+                            </div>
+                        </div>*@
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Address, new { @class = "sr-only" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Address, new { @class = "form-control", @placeholder = "Addresse" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "sr-only" })
+                        <div class="col-md-10">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "sr-only" })
+                        <div class="col-md-10">
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "Confirm Password" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Role", new { @class = "sr-only" })
+                        <div class="col-md-10">
+
+                            @Html.DropDownList("Role", (SelectList)ViewBag.Roles, "<--Select your Role-->")
+                        </div>
+                    </div>
+
+
+                    <input type="submit" class="btn btn-block btn-primary" value="Sign up">
+
+
+
+
+
+                }
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="~/Front End/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Front End/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="~/Front End/vendors/icheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input[type='checkbox'],input[type='radio']").iCheck({
+                checkboxClass: 'icheckbox_minimal-blue',
+                radioClass: 'iradio_minimal-blue'
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+@*@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+    @Html.AntiForgeryToken()
+    <h4>Create a new account.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Role", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            //Html.DropDownList("Name")
+            @Html.DropDownList("Role", (SelectList)ViewBag.Roles)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+    </div>
+
+        }
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@
