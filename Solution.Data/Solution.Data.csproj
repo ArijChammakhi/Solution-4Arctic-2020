@@ -61,17 +61,9 @@
     <Compile Include="Configurations\IdentityUserLoginConfiguration.cs" />
     <Compile Include="Configurations\IdentityUserRoleConfiguration.cs" />
     <Compile Include="CustomConventions\DateTime2Convention.cs" />
-    <Compile Include="Migrations\202006021858159_arij.cs" />
-    <Compile Include="Migrations\202006021858159_arij.designer.cs">
-      <DependentUpon>202006021858159_arij.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006021932336_arouja.cs" />
-    <Compile Include="Migrations\202006021932336_arouja.designer.cs">
-      <DependentUpon>202006021932336_arouja.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006031354440_jaime.cs" />
-    <Compile Include="Migrations\202006031354440_jaime.designer.cs">
-      <DependentUpon>202006031354440_jaime.cs</DependentUpon>
+    <Compile Include="Migrations\202006041718167_hhh.cs" />
+    <Compile Include="Migrations\202006041718167_hhh.designer.cs">
+      <DependentUpon>202006041718167_hhh.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
@@ -95,14 +87,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006021858159_arij.resx">
-      <DependentUpon>202006021858159_arij.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006021932336_arouja.resx">
-      <DependentUpon>202006021932336_arouja.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006031354440_jaime.resx">
-      <DependentUpon>202006031354440_jaime.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006041718167_hhh.resx">
+      <DependentUpon>202006041718167_hhh.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

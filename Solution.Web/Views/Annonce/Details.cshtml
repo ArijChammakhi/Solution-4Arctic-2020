@@ -175,13 +175,13 @@
 
             <div class="input-group">
                 <table>
-
-                    {% for i in inter if evenement is same as(i.evenement) and user is same as(i.idUser)%}
-                    <label> Vous Etes Deja Interesse</label>
-                    {% else  %}
-                    <li><a id="btn" class=" btn btn-primary" href="@Url.Action("AddLike","Interresse", new { id = @Model.Id}) "><span class="text-white"><i class="livicon" data-name="hand-right" data-size="24" data-loop="true" data-c="#fff" data-hc="white"></i></span></a></li>
-                    {% endfor %}
-                </table>
+                    @using (Html.BeginForm("AddLike", "Interesse", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <li><a id="btn" class=" btn btn-primary" href=""><span class="text-white"><i class="livicon" data-name="hand-right" data-size="24" data-loop="true" data-c="#fff" data-hc="white"></i></span></a>  @Html.ActionLink("Like", "Like", new { id = @Model.Id })</li>
+                        <a href="@Url.Action("AddLike", "Interesse", new { id = @Model.Id })">J'aime</a>
+                    }
+                    </table>
 
 
             </div>

@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "MesAnnonce";
-    Layout = "~/Views/Shared/Client.cshtml";
+    Layout = "~/Views/Shared/Owner.cshtml";
 
 }
 
@@ -14,7 +14,7 @@
         <div class="text-center">
             <input type="text" class="form-control" placeholder="rechercher par Nom :" id="recherche" name="evenementrecherche" style="width: 200px">
             <div class="searching">
-                <h3 class="border-success"><span class="heading_border bg-success">Voici la Liste de Tous Mes Annoncesb</span></h3>
+                <h3 class="border-success"><span class="heading_border bg-success">Voici la Liste de Tous Mes Annonces</span></h3>
 
 
                 <br>
@@ -110,8 +110,8 @@
             $('#recherche').on('keyup', function () {
                 $search = $(this).val();
                 $.ajax({
-                    url: "{{ path('a_recherche') }}",
-                    data: {'search2': $search }
+                    url: '@Url.Action("MesAnnonces")',
+                    data: {'MesAnnoce': $search }
                 }).done(function (response) {
                     $('.searching').html(response)
                 }).catch(function (err) {

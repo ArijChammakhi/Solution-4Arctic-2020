@@ -111,11 +111,11 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Workshop</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mes Interesses</a>
                         <ul class="dropdown-menu" role="menu">
 
                             <li>
-                                <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/affiche")}}">voir les workshop</a>
+                                <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/affiche")}}">Mes Interesses</a>
                             </li>
                             <li>
                                 <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/archive")}}">historique de workshop</a>
@@ -163,7 +163,12 @@
                         <a href="{{ asset("contact.html")}}">Contact</a>
                     </li>
                     <li>
-                        <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/login")}}">Logout</a>
+                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <a href="javascript:document.getElementById('logoutForm').submit()" class="icon-menu"> log Out</a>
+
+                        }
                     </li>
                 </ul>
             </div>

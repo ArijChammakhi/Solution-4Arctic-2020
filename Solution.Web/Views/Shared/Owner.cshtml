@@ -85,13 +85,10 @@
                                         <a href="@Url.Action("CreateAppartementV","Annonce")"> Appartement</a>
                                     </li>
                                     <li>
-                                        <a href="@Url.Action("CreateTerrain","Annonce")"> Terrain</a>
+                                        <a href=""> Terrain</a>
                                     </li>
                                 </ul>
                             </li>
-
-
-
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ajouter Location</a>
                                 <ul class="dropdown-menu" role="menu">
@@ -107,6 +104,8 @@
                                     </li>
                                 </ul>
                             </li>
+
+                           
                             <li>
                                 <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/mesfavori")}}">Mes Interesses</a>
                             </li>
@@ -114,11 +113,11 @@
 
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Workshop</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mes Annonces</a>
                         <ul class="dropdown-menu" role="menu">
 
                             <li>
-                                <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/affiche")}}">voir les workshop</a>
+                                <a href="@Url.Action("MesAnnonce","Annonce")">Mes Annonces</a>
                             </li>
                             <li>
                                 <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/archive")}}">historique de workshop</a>

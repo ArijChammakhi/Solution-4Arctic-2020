@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "login_registre";
+}
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login | Welcome to Josh Frontend</title>
+    <!--global css starts-->
+    <link rel="stylesheet" type="text/css" href="~/Front End/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="~/Front End/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="~/Front End/images/favicon.png" type="image/x-icon">
+    <!--end of global css-->
+    <!--page level css starts-->
+    <link type="text/css" rel="stylesheet" href="~/Front End/vendors/icheck/skins/all.css" />
+    <link rel="stylesheet" type="text/css" href="~/Front End/css/login.css">
+    <!--end of page level css-->
+</head>
+
+<body>
+    <div class="container">
+        <!--Content Section Start -->
+        <div class="row">
+            <div class="box animation flipInX">
+                <div class="box1">
+                    <img src="~/Front End/images/download.png" alt="logo" class="img-responsive mar">
+                    @RenderBody()
+
+
+                </div>
+            </div>
+        </div>
+        <!-- //Content Section End -->
+    </div>
+    <!--global js starts-->
+    <script type="text/javascript" src="~/Front End/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Front End/js/bootstrap.min.js"></script>
+    <!--global js end-->
+    <script type="text/javascript" src="~/Front End/vendors/icheck/icheck.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("input[type='checkbox']").iCheck({
+            checkboxClass: 'icheckbox_minimal-blue'
+        });
+    });
+    </script>
+</body>
+
+</html>
+
+
+

@@ -41,6 +41,7 @@ namespace Solution.Web.Models
         public bool CuisineEquipe { get; set; }
         //Studio
         public TypeStudio typeStudio { get; set; }
+        public int PostLike { get; set; }
 
         public string UserID { get; set; }
     }

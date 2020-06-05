@@ -10,9 +10,24 @@ namespace Solution.Web.Controllers
     {
         public ActionResult Index()
         {
+            if (!Request.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            if (User.IsInRole("Client"))
+            {
+                return RedirectToAction("Index", "Annonce");
+            }
+            if (User.IsInRole("Owner"))
+            {
+                return RedirectToAction("Index1", "Annonce");
+            }
+            if (User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Admin");
+            }
             return View();
         }
-
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

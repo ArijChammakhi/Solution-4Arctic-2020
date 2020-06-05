@@ -5,6 +5,7 @@ using Solution.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,9 +14,11 @@ namespace Solution.Web.Controllers
     public class InterresseController : Controller
     {
         ILikeService LikeService;
+        IAnnonceService annonceService;
         public InterresseController()
         {
             LikeService = new likeService();
+            annonceService = new AnnonceService();
         }
        
 
@@ -31,33 +34,43 @@ namespace Solution.Web.Controllers
             return View();
         }
 
-        // GET: Interresse/Create
-        public ActionResult Create()
+        // GET: Interresse/AddLike/5
+        public ActionResult AddLike(int Id)
         {
-            return View();
+            if (Id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Annonce a = annonceService.GetById(Id);
+
+            if (a == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(a);
         }
 
        
-        // POST: Interesse/addLike
+        // POST: Interesse/AddLike/5
         [HttpPost]
         public ActionResult AddLike(LikeVM likevm, int idpa)
         {
 
-
-            Interesse like = new Interesse();
-
-            like.IdAnnonce = idpa;
-            like.UserID = User.Identity.GetUserId();
-
-
-
-            LikeService.Add(like);
-            LikeService.Commit();
-
-
-
-
-            return View();
+            try
+            {
+                Interesse I = new Interesse();
+                I.IdAnnonce = idpa;
+                I.UserID = User.Identity.GetUserId();
+                LikeService.Add(I);
+                LikeService.Commit();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
 
         }
 

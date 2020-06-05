@@ -2,95 +2,49 @@
 @model LoginViewModel
 @{
     ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/login_registre.cshtml";
+
 }
 
-<html>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login | Welcome to Josh Frontend</title>
-    <!--global css starts-->
-    <link rel="stylesheet" type="text/css" href="~/Front End/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="~/Front End/images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="~/Front End/images/favicon.png" type="image/x-icon">
-    <!--end of global css-->
-    <!--page level css starts-->
-    <link type="text/css" rel="stylesheet" href="~/Front End/vendors/icheck/skins/all.css" />
-    <link rel="stylesheet" type="text/css" href="~/Front End/css/login.css">
-    <!--end of page level css-->
-</head>
+<h3 class="text-primary">Login</h3>
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
 
-<body>
-    <div class="container">
-        <!--Content Section Start -->
-        <div class="row">
-            <div class="box animation flipInX">
-                <div class="box1">
-                    <img src="~/Front End/images/download.png" alt="logo" class="img-responsive mar">
-                    <h3 class="text-primary">Login</h3>
-                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                     
-                   
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                            <div class="col-md-10">
-                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                            <div class="col-md-10">
-                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-10">
-                                <div class="checkbox text-left">
-                                    @Html.CheckBoxFor(m => m.RememberMe)
-                                    @Html.LabelFor(m => m.RememberMe)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-10">
-                                <input type="submit" value="Log in" class="btn btn-block btn-primary" />
-                            </div>
-                        </div>
-                        <p>
-                            @Html.ActionLink("Register as a new user", "Register")
-                        </p>
-                    }
-                        
 
-      
-              
-                 </div>
-              </div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
         </div>
-        <!-- //Content Section End -->
     </div>
-    <!--global js starts-->
-    <script type="text/javascript" src="~/Front End/js/jquery.min.js"></script>
-    <script type="text/javascript" src="~/Front End/js/bootstrap.min.js"></script>
-    <!--global js end-->
-    <script type="text/javascript" src="~/Front End/vendors/icheck/icheck.min.js"></script>
-    <script>
-    $(document).ready(function(){
-        $("input[type='checkbox']").iCheck({
-            checkboxClass: 'icheckbox_minimal-blue'
-        });
-    });
-    </script>
-</body>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <div class="checkbox text-left">
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe)
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Log in" class="btn btn-block btn-primary" />
+        </div>
+    </div>
+    <p>Don't have an account? </p><a href="@Url.Action("Register","Account")"><strong> Sign up</strong></a>
+    
+}
 
-</html>
 
 
 

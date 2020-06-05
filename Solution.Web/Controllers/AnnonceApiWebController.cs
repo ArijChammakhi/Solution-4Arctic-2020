@@ -124,9 +124,10 @@ namespace Solution.Web.Controllers
 
 
 
+       
+       
         // DELETE: api/AnnonceApiWeb/5
-        [Route("Annonce/DelAnnonces/{id}")]
-
+        // [Route("api/AnnonceApiWeb")]
         public IHttpActionResult Delete(int id)
 
         {

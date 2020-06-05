@@ -53,6 +53,47 @@ namespace Solution.Web.Controllers
 
             return View(meubles);
         }
+
+
+        // GET: MesMeubles
+        public ActionResult MesMeubles(string searchString)
+        {
+            string currentUserId = User.Identity.GetUserId();
+            string myInt = string.Format(currentUserId);
+
+            List<MeubleVm> Meubles = new List<MeubleVm>();
+            List<Meuble> meubleDomain = meubleService.getMesMeubles(myInt).ToList();
+            /* sans service
+            if (!String.IsNullOrEmpty(searchString)) {
+                FilmDomain = FilmDomain.Where(m => m.Title.Contains(searchString)).ToList(); 
+            }*/
+           
+
+            foreach (Meuble f in meubleDomain)
+            {
+                Meubles.Add(new MeubleVm()
+                {
+                    IdMeuble=f.IdMeuble,
+                    Adresse=f.Adresse,
+                    Titre=f.Titre,
+                     Description=f.Description,
+                     Image=f.Image,
+                     OutDate=f.DatePublication,
+                     PrixM=f.PrixM,
+                     UserID=f.UserID
+                });
+            }
+
+            return View(Meubles);
+        }
+
+
+
+
+
+
+
+
         // GET: Meuble/Details/5
         public ActionResult Details(int id)
         {

@@ -44,6 +44,7 @@ namespace Solution.Domain.Entities
         public bool Ascensseur { get; set; }
         public bool CuisineEquipe { get; set; }
 
+        public int post_like { get; set; }
         public float Superficie { get; set; }
         public string UserID { get; set; }
         [ForeignKey("UserID")]
