@@ -15,7 +15,6 @@ namespace Solution.Domain.Entities
     public class Annonce
     {
 
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdAnnonce { get; set; }
@@ -25,8 +24,6 @@ namespace Solution.Domain.Entities
         public Statut statut { get; set; }
         public string Type_Dannonce { get; set; }
         public string Description { get; set; }
-
-
 
         public float PrixAchat { get; set; }
         public float LoyerMensuel { get; set; }
@@ -44,12 +41,14 @@ namespace Solution.Domain.Entities
         public bool Ascensseur { get; set; }
         public bool CuisineEquipe { get; set; }
 
-        public int post_like { get; set; }
         public float Superficie { get; set; }
+        
         public string UserID { get; set; }
         [ForeignKey("UserID")]
         public virtual User User { get; set; }
-                public virtual ICollection<Interesse> Interesses { get; set; }
+
+        public virtual ICollection<Interesse> Interesses { get; set; }
+
 
 
 

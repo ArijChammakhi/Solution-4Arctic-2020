@@ -41,15 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbonnementService.cs" />
     <Compile Include="AnnonceService.cs" />
+    <Compile Include="IAbonnementService.cs" />
     <Compile Include="IAnnonceService.cs" />
     <Compile Include="ILikeService.cs" />
     <Compile Include="IMeubleService.cs" />
-    <Compile Include="IUserService.cs" />
     <Compile Include="likeService.cs" />
     <Compile Include="MeubleService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Service.Pattern\Service.Pattern.csproj">

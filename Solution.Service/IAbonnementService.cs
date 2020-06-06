@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace Solution.Service
 {
-     public interface IMeubleService : IService<Meuble>
+    public interface IAbonnementService : IService<Abonnement>
     {
-        Meuble getMeubleById(int id);
+        Abonnement getAbonnementById(int id);
+        IEnumerable<Abonnement> getMesAbonnements(string uid);
     }
 }

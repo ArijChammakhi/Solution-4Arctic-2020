@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Entities\Abonnement.cs" />
     <Compile Include="Entities\Annonce.cs" />
     <Compile Include="Entities\Appartement.cs" />
     <Compile Include="Entities\Interesse.cs" />

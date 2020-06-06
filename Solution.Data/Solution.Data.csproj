@@ -58,12 +58,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Configurations\AbonnementConfiguration.cs" />
     <Compile Include="Configurations\IdentityUserLoginConfiguration.cs" />
     <Compile Include="Configurations\IdentityUserRoleConfiguration.cs" />
     <Compile Include="CustomConventions\DateTime2Convention.cs" />
-    <Compile Include="Migrations\202006041718167_hhh.cs" />
-    <Compile Include="Migrations\202006041718167_hhh.designer.cs">
-      <DependentUpon>202006041718167_hhh.cs</DependentUpon>
+    <Compile Include="Migrations\202006041211020_fk.cs" />
+    <Compile Include="Migrations\202006041211020_fk.designer.cs">
+      <DependentUpon>202006041211020_fk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006041348459_abonnement-data.cs" />
+    <Compile Include="Migrations\202006041348459_abonnement-data.designer.cs">
+      <DependentUpon>202006041348459_abonnement-data.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
@@ -87,8 +92,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006041718167_hhh.resx">
-      <DependentUpon>202006041718167_hhh.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006041211020_fk.resx">
+      <DependentUpon>202006041211020_fk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006041348459_abonnement-data.resx">
+      <DependentUpon>202006041348459_abonnement-data.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

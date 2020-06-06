@@ -23,7 +23,9 @@ namespace Solution.Domain.Entities
         public string image { get; set; }
         public string role { get; set; }
 
+        public virtual ICollection<Abonnement> Abonnements { get; set; }
 
+        public virtual ICollection<Meuble> Meubles{ get; set; }
         public virtual ICollection<Annonce> Annonces { get; set; }
         public virtual ICollection<Interesse> Interesses { get; set; }
 

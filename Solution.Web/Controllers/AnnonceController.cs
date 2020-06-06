@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNet.Identity;
-using Solution.Data;
 using Solution.Domain.Entities;
 using Solution.Service;
 using Solution.Web.Models;
@@ -15,7 +14,7 @@ namespace Solution.Web.Controllers
 {
     public class AnnonceController : Controller
     {
-        MyContext db = new MyContext();
+        
         IAnnonceService AnnonceService;
         ILikeService LikeService;
      
@@ -48,34 +47,7 @@ namespace Solution.Web.Controllers
                     UserID = f.UserID,
                     DateAnnonce = f.DateAnnonce,
                     Titre = f.Titre,
-                    ImageBi=f.ImageBi });
-            }
-
-            return View(Annonces);
-        }
-        // GET: Annoncesss
-        public ActionResult Index1(string searchString)
-        {
-            List<AnnonceVM> Annonces = new List<AnnonceVM>();
-            List<Annonce> AnnonceDomain = AnnonceService.GetMany().ToList();
-            /* sans service
-            if (!String.IsNullOrEmpty(searchString)) {
-                FilmDomain = FilmDomain.Where(m => m.Title.Contains(searchString)).ToList(); 
-            }*/
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                AnnonceDomain = AnnonceService.getAnnoncesByName(searchString).ToList();
-            }
-
-            foreach (Annonce f in AnnonceDomain)
-            {
-                Annonces.Add(new AnnonceVM()
-                {
-                    UserID = f.UserID,
-                    DateAnnonce = f.DateAnnonce,
-                    Titre = f.Titre,
-                    ImageBi = f.ImageBi
-                });
+                    ImageBi=f.ImageBi,                });
             }
 
             return View(Annonces);
@@ -119,8 +91,7 @@ namespace Solution.Web.Controllers
                    type=f.type,
                    Superficie=f.Superficie,
                    Type_Dannonce=f.Type_Dannonce,
-                   typeStudio=f.typeStudio,
-                   PostLike=f.post_like
+                   typeStudio=f.typeStudio
                 });
             }
 
@@ -164,9 +135,7 @@ namespace Solution.Web.Controllers
                     type = f.type,
                     Superficie = f.Superficie,
                     Type_Dannonce = f.Type_Dannonce,
-                    typeStudio = f.typeStudio,
-                    PostLike=f.post_like
-
+                    typeStudio = f.typeStudio
                 });
             }
 
@@ -209,8 +178,7 @@ namespace Solution.Web.Controllers
                     type = f.type,
                     Superficie = f.Superficie,
                     Type_Dannonce = f.Type_Dannonce,
-                    typeStudio = f.typeStudio,
-                    PostLike = f.post_like
+                    typeStudio = f.typeStudio
                 });
             }
 
@@ -253,8 +221,7 @@ namespace Solution.Web.Controllers
                     type = f.type,
                     Superficie = f.Superficie,
                     Type_Dannonce = f.Type_Dannonce,
-                    typeStudio = f.typeStudio,
-                    PostLike = f.post_like
+                    typeStudio = f.typeStudio
                 });
             }
 
@@ -297,8 +264,7 @@ namespace Solution.Web.Controllers
                     type = f.type,
                     Superficie = f.Superficie,
                     Type_Dannonce = f.Type_Dannonce,
-                    typeStudio = f.typeStudio,
-                    PostLike = f.post_like
+                    typeStudio = f.typeStudio
                 });
             }
 
@@ -341,8 +307,7 @@ namespace Solution.Web.Controllers
                     type = f.type,
                     Superficie = f.Superficie,
                     Type_Dannonce = f.Type_Dannonce,
-                    typeStudio = f.typeStudio,
-                    PostLike = f.post_like
+                    typeStudio = f.typeStudio
                 });
             }
 
@@ -385,8 +350,7 @@ namespace Solution.Web.Controllers
                     type = f.type,
                     Superficie = f.Superficie,
                     Type_Dannonce = f.Type_Dannonce,
-                    typeStudio = f.typeStudio,
-                    PostLike = f.post_like
+                    typeStudio = f.typeStudio
                 });
             }
 
@@ -430,7 +394,6 @@ namespace Solution.Web.Controllers
                     Superficie = f.Superficie,
                     Type_Dannonce = f.Type_Dannonce,
                     typeStudio = f.typeStudio,
-                    PostLike = f.post_like
                 });
             }
 
@@ -473,7 +436,6 @@ namespace Solution.Web.Controllers
                 Superficie = f.Superficie,
                 Type_Dannonce = f.Type_Dannonce,
                 typeStudio = f.typeStudio,
-                PostLike = f.post_like
             };
 
             return View(AVM);
@@ -905,24 +867,7 @@ namespace Solution.Web.Controllers
             }
         }
 
-        // POST: Annonce/Like
-        [HttpPost]
-        public ActionResult Like(int id)
-        {
-            try
-            {
-               Interesse I = new Interesse();
-                I.IdAnnonce = id;
-                I.UserID = User.Identity.GetUserId();
-                LikeService.Add(I);
-                LikeService.Commit();
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+       
 
     }
 }

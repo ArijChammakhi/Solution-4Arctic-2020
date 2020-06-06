@@ -163,7 +163,7 @@
                             <a href="{{ asset("contact.html")}}">Contact</a>
                         </li>
                         <li>
-                            <a href="@Url.Action("LogOff", "Account")">Log Out</a>
+                            <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/login")}}">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -206,6 +206,9 @@
 
         @RenderBody()
 
+        <br>
+        <br><br>
+        <br>
 
         <!-- Footer Section Start -->
         <footer>

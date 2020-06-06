@@ -8,27 +8,26 @@ using System.Threading.Tasks;
 
 namespace Solution.Domain.Entities
 {
-    public class Meuble
-    {
-        public Meuble()
-        {
+    public class Abonnement
 
-        }
+    {
+        public enum typeAbonnement { primum, gold }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdMeuble { get; set; }
-        public string Titre { get; set; }
-        public string Adresse { get; set; }
-        [DataType(DataType.Date)]
-        public DateTime DatePublication { get; set; }
-
+        public int IdAbonnement { get; set; }
         public string Image { get; set; }
-        public float PrixM { get; set; }
-        public string Description { get; set; }
+        public typeAbonnement type { get; set; }
+        public float Prix { get; set; }
+        public DateTime DateDebut { get; set; }
+        public DateTime DateFin { get; set; }
 
         public string UserID { get; set; }
+        //propriete de navigation
         [ForeignKey("UserID")]
         public virtual User User { get; set; }
+
+        public Abonnement() { }
 
     }
 }

@@ -9,28 +9,18 @@ using System.Threading.Tasks;
 
 namespace Solution.Service
 {
-    public class MeubleService : Service<Meuble>, IMeubleService
+     public class MeubleService : Service<Meuble>, IMeubleService
     {
         static IDataBaseFactory Factory = new DataBaseFactory();
-        static IUnitOfWork utk = new UnitOfWork(Factory);
-        public MeubleService() : base(utk)
-        {
+    static IUnitOfWork utk = new UnitOfWork(Factory);
+    public MeubleService() : base(utk)
+    {
 
-        }
-
-        public IEnumerable<Meuble> getMesMeubles(string id)
-        {
-            return GetMany(f => f.UserID.Contains(id));
-        }
+    }
 
         public Meuble getMeubleById(int id)
         {
-            return Get(f => f.IdMeuble.Equals(id));
-        }
-
-        public Meuble getMeubleByName(string name)
-        {
-            return Get(f => f.Titre.Equals(name));
+           return Get(f => f.IdMeuble.Equals(id));
         }
     }
 }
