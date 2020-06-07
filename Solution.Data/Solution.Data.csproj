@@ -58,17 +58,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Configurations\AbonnementConfiguration.cs" />
     <Compile Include="Configurations\IdentityUserLoginConfiguration.cs" />
     <Compile Include="Configurations\IdentityUserRoleConfiguration.cs" />
     <Compile Include="CustomConventions\DateTime2Convention.cs" />
-    <Compile Include="Migrations\202006041211020_fk.cs" />
-    <Compile Include="Migrations\202006041211020_fk.designer.cs">
-      <DependentUpon>202006041211020_fk.cs</DependentUpon>
+    <Compile Include="Migrations\202006021858159_arij.cs" />
+    <Compile Include="Migrations\202006021858159_arij.designer.cs">
+      <DependentUpon>202006021858159_arij.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006041348459_abonnement-data.cs" />
-    <Compile Include="Migrations\202006041348459_abonnement-data.designer.cs">
-      <DependentUpon>202006041348459_abonnement-data.cs</DependentUpon>
+    <Compile Include="Migrations\202006021932336_arouja.cs" />
+    <Compile Include="Migrations\202006021932336_arouja.designer.cs">
+      <DependentUpon>202006021932336_arouja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006031354440_jaime.cs" />
+    <Compile Include="Migrations\202006031354440_jaime.designer.cs">
+      <DependentUpon>202006031354440_jaime.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
@@ -92,11 +95,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006041211020_fk.resx">
-      <DependentUpon>202006041211020_fk.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006021858159_arij.resx">
+      <DependentUpon>202006021858159_arij.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006041348459_abonnement-data.resx">
-      <DependentUpon>202006041348459_abonnement-data.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006021932336_arouja.resx">
+      <DependentUpon>202006021932336_arouja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006031354440_jaime.resx">
+      <DependentUpon>202006031354440_jaime.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
