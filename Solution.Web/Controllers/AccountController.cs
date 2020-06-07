@@ -184,7 +184,7 @@ namespace Solution.Web.Controllers
                     // I added this :: 
                     await this.UserManager.AddToRoleAsync(user.Id, model.Role);
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Login", "Account");
                 }
 
 
@@ -194,7 +194,7 @@ namespace Solution.Web.Controllers
 
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            return View("Login");
         }
 
         //
@@ -417,7 +417,7 @@ namespace Solution.Web.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
         //

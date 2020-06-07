@@ -22,5 +22,15 @@ namespace Solution.Service
         {
            return Get(f => f.IdMeuble.Equals(id));
         }
+
+        public IEnumerable<Meuble> getMesMeubles(string id)
+        {
+            return GetMany(f => f.UserID.Contains(id));
+        }
+
+        public Meuble getMeubleByName(string name)
+        {
+            return Get(f => f.Titre.Equals(name));
+        }
     }
 }

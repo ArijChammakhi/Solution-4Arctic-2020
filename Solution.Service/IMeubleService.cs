@@ -11,5 +11,7 @@ namespace Solution.Service
      public interface IMeubleService : IService<Meuble>
     {
         Meuble getMeubleById(int id);
+        IEnumerable<Meuble> getMesMeubles(string id);
+        Meuble getMeubleByName(string name);
     }
 }
