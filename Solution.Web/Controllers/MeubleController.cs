@@ -21,12 +21,7 @@ namespace Solution.Web.Controllers
         }
 
         // GET: Meuble
-        public ActionResult Index()
-        {
-            return View();
-        }
-        // GET: Meuble/AfficherMeuble
-        public ActionResult AfficherMeuble()
+        public ActionResult Index( string searchString)
         {
             List<MeubleVm> meubles = new List<MeubleVm>();
             List<Meuble> MeubleDomain = meubleService.GetMany().ToList();
@@ -34,7 +29,43 @@ namespace Solution.Web.Controllers
             if (!String.IsNullOrEmpty(searchString)) {
                 FilmDomain = FilmDomain.Where(m => m.Title.Contains(searchString)).ToList(); 
             }*/
-         
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                 MeubleDomain = meubleService.getMeubles(searchString).ToList();
+
+            }
+
+            foreach (Meuble f in MeubleDomain)
+            {
+                meubles.Add(new MeubleVm()
+                {
+                    UserID = f.UserID,
+                    Description = f.Description,
+                    Titre = f.Titre,
+                    Image = f.Image,
+                    Adresse = f.Adresse,
+                    IdMeuble = f.IdMeuble,
+                    OutDate = f.DatePublication,
+                    PrixM = f.PrixM
+                });
+            }
+
+            return View(meubles);
+        }
+        // GET: Meuble/AfficherMeuble
+        public ActionResult AfficherMeuble(string searchString)
+        {
+            List<MeubleVm> meubles = new List<MeubleVm>();
+            List<Meuble> MeubleDomain = meubleService.GetMany().ToList();
+            /* sans service
+            if (!String.IsNullOrEmpty(searchString)) {
+                FilmDomain = FilmDomain.Where(m => m.Title.Contains(searchString)).ToList(); 
+            }*/
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                MeubleDomain = meubleService.getMeubles(searchString).ToList();
+
+            }
 
             foreach (Meuble f in MeubleDomain)
             {
@@ -53,8 +84,79 @@ namespace Solution.Web.Controllers
 
             return View(meubles);
         }
+
+
+        // GET: MesMeubles
+        public ActionResult MesMeubles(string searchString)
+        {
+            string currentUserId = User.Identity.GetUserId();
+            string myInt = string.Format(currentUserId);
+
+            List<MeubleVm> Meubles = new List<MeubleVm>();
+            List<Meuble> meubleDomain = meubleService.getMesMeubles(myInt).ToList();
+            /* sans service
+            if (!String.IsNullOrEmpty(searchString)) {
+                FilmDomain = FilmDomain.Where(m => m.Title.Contains(searchString)).ToList(); 
+            }*/
+           
+
+            foreach (Meuble f in meubleDomain)
+            {
+                Meubles.Add(new MeubleVm()
+                {
+                    IdMeuble=f.IdMeuble,
+                    Adresse=f.Adresse,
+                    Titre=f.Titre,
+                     Description=f.Description,
+                     Image=f.Image,
+                     OutDate=f.DatePublication,
+                     PrixM=f.PrixM,
+                     UserID=f.UserID
+                });
+            }
+
+            return View(Meubles);
+        }
+
+
+
+
+
+
+
+
         // GET: Meuble/Details/5
         public ActionResult Details(int id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Meuble f;
+            f = meubleService.getMeubleById((int)id);
+            if (f == null)
+            {
+                return HttpNotFound();
+            }
+
+            MeubleVm AVM = new MeubleVm()
+            {
+                UserID = f.UserID,
+                Description = f.Description,
+                Titre = f.Titre,
+                Image = f.Image,
+                Adresse = f.Adresse,
+                IdMeuble = f.IdMeuble,
+                OutDate = f.DatePublication,
+                PrixM = f.PrixM
+            };
+
+            return View(AVM);
+        }
+
+
+        // GET: Meuble/Details/5
+        public ActionResult DetailsClient(int id)
         {
             if (id == null)
             {
@@ -120,29 +222,60 @@ namespace Solution.Web.Controllers
             meubleService.Commit();
             //var path = Path.Combine(Server.MapPath("~/Content/Upload/"), Image.FileName);
             //Image.SaveAs(path);
-            return RedirectToAction("Index");
+            return RedirectToAction("AfficherMeuble");
         }
 
         // GET: Meuble/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            //var userId = User.Identity.GetUserId();
+            //string UserName = US.GetById(userId).UserName;
+            //string Phone = US.GetById(userId).Phone;
+            //string mail = US.GetById(userId).Email;
+            //string role = US.GetById(userId).Role;
+
+            //ViewBag.Email = mail;
+            //ViewBag.phone = Phone;
+            //ViewBag.UserName = UserName;
+            //ViewBag.Role = role;
+            //ViewBag.authenticated = val1;
+
+            Meuble p = meubleService.GetById(id);
+            if (p == null)
+            {
+                return HttpNotFound();
+            }
+            return View(p);
         }
 
         // POST: Meuble/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Meuble m, HttpPostedFileBase file)
         {
-            try
-            {
-                // TODO: Add update logic here
+            Meuble meuble = meubleService.GetById(m.IdMeuble);
+            m.UserID = User.Identity.GetUserId<string>();
 
+            meuble.Titre = m.Titre;
+            meuble.DatePublication = DateTime.Now;
+            meuble.Image = file.FileName;
+            meuble.PrixM = m.PrixM;
+            meuble.Adresse = m.Adresse;
+            meuble.Adresse = m.Adresse;
+            var fileName = "";
+
+            if (file.ContentLength > 0)
+            {
+                fileName = Path.GetFileName(file.FileName);
+                var path = Path.Combine(Server.MapPath("~/Content/"), fileName);
+                file.SaveAs(path);
+            }
+            if (ModelState.IsValid)
+            {
+                meubleService.Update(meuble);
+                meubleService.Commit();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: Meuble/Delete/5
@@ -172,7 +305,7 @@ namespace Solution.Web.Controllers
 
           meubleService.Delete(an);
           meubleService.Commit();
-            return RedirectToAction("ficherMeuble");
+            return RedirectToAction("MesMeubles");
 
         }
     }
