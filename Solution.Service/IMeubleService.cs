@@ -13,5 +13,6 @@ namespace Solution.Service
         Meuble getMeubleById(int id);
         IEnumerable<Meuble> getMesMeubles(string id);
         Meuble getMeubleByName(string name);
+        IEnumerable<Meuble> getMeubles(string id);
     }
 }
