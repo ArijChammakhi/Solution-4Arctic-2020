@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/Client.cshtml";
+    Layout = "~/Views/Shared/Owner.cshtml";
 }
 
 
@@ -40,7 +40,7 @@
         <!-- //Slider Section End -->
         <!-- Project Description Section Start -->
         <div class="col-md-6">
-            <h3 class="project">Description de L'Annonce</h3>
+            <h3 class="project">Description du Meuble</h3>
           
                 <div class="text-justify">
                     <ul>
@@ -57,10 +57,10 @@
            
 
 
-            <div class="input-group">
+            @*<div class="input-group">
                 <table>
 
-                    {% for i in inter if evenement is same as(i.evenement) and user is same as(i.idUser)%}
+                   
                     <label> Vous Etes Deja Interesse</label>
                     {% else  %}
                     <li><a id="btn" class=" btn btn-primary" href="{{ path('ajoutinter',{'ide':evenement.id}) }} "><span class="text-white"><i class="livicon" data-name="hand-right" data-size="24" data-loop="true" data-c="#fff" data-hc="white"></i></span></a></li>
@@ -68,7 +68,7 @@
                 </table>
 
 
-            </div>
+            </div>*@
 
         </div>
 
@@ -80,8 +80,7 @@
 
 <br>
 <br>
-<th>Partage</th>
-<td>{{ socialButtons() }}</td>
+
 <br>
 <br>
 

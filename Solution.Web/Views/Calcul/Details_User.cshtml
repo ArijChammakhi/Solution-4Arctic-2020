@@ -1,0 +1,46 @@
+﻿@model Solution.Domain.Entities.Banque
+
+@{
+    ViewBag.Title = "Details_User";
+}
+
+<h2>Details_User</h2>
+
+<div>
+    <h4>Banque</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.libelle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.libelle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.adresse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adresse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.interet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.interet)
+        </dd>
+       
+
+       
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Calculer montant par mois", "GetCalcul_par_mois") |
+    @Html.ActionLink("Back to List", "Index_User")
+</p>
