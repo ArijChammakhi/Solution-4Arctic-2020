@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Solution.Domain.Entities.Banque>
+
+@{
+    ViewBag.Title = "Index_User";
+}
+
+<h2>Index_User</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.libelle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adresse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.interet)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.libelle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.adresse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.interet)
+        </td>
+        <td>
+            
+            @Html.ActionLink("Details et Calcul", "Details_User", new { id=item.id }) 
+            
+        </td>
+    </tr>
+}
+
+</table>
