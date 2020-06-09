@@ -29,6 +29,9 @@ namespace Solution.Domain.Entities
         public virtual ICollection<Annonce> Annonces { get; set; }
         public virtual ICollection<Interesse> Interesses { get; set; }
 
+        public virtual ICollection<Annonce> ContratAnnonces{ get; set; }
+
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

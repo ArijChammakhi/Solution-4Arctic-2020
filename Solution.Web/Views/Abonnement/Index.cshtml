@@ -2,56 +2,57 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageAbonnementM)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PrixAbonnementM)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateDebutAbonnementM)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateFinAbonnementM)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UtilisateurId)
-        </th>
-        <th></th>
-    </tr>
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-8"><h2>Ceci est la liste de tous les abonnements</h2></div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-info add-new" disabled="disabled"><i class="fa fa-plus"></i> Add New</button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="text-md-center">
+                    <th>Motif de Paiement</th>
+                    <th>Etat</th>
+                    <th>Date d'abonnement</th>
+                    <th>Date d'expiration</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ImageAbonnementM)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StateM)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateDebutAbonnementM)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateFinAbonnementM)
+                        </td>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImageAbonnementM)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PrixAbonnementM)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateDebutAbonnementM)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateFinAbonnementM)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UtilisateurId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdAbonnementM }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdAbonnementM }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdAbonnementM })
-        </td>
-    </tr>
-}
+                        <td>
+                            @Html.ActionLink("Confirmer", "ConfirmAbonnement", new { id = item.IdAbonnementM }) |
+                            @Html.ActionLink("Edit", "Edit", new { id = item.IdAbonnementM }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.IdAbonnementM }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.IdAbonnementM })
+                        </td>
+                    </tr>
+                }
 
-</table>
+            </tbody>
+        </table>
+    </div>
+</div>

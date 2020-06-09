@@ -27,5 +27,12 @@ namespace Solution.Service
         {
             return GetMany(f => f.UserID.Contains(uid));
         }
+
+        public Abonnement confirmAbonnement(int id)
+        {
+            Abonnement ab = getAbonnementById(id);
+            ab.State = "Confirmé";
+            return ab;
+        }
     }
 }

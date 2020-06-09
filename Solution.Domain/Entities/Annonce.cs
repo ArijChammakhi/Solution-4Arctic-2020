@@ -49,6 +49,9 @@ namespace Solution.Domain.Entities
 
         public virtual ICollection<Interesse> Interesses { get; set; }
 
+        public virtual ICollection<User> Utilisateurs { get; set; }
+
+
 
 
 

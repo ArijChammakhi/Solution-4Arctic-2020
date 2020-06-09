@@ -61,6 +61,7 @@
     <Compile Include="Entities\Abonnement.cs" />
     <Compile Include="Entities\Annonce.cs" />
     <Compile Include="Entities\Appartement.cs" />
+    <Compile Include="Entities\Contrat.cs" />
     <Compile Include="Entities\Interesse.cs" />
     <Compile Include="Entities\Maison.cs" />
     <Compile Include="Entities\Meuble.cs" />

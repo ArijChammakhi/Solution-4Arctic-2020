@@ -5,7 +5,7 @@
     <html>
     <body>
         <!-- Header Start -->
-        <header>
+        <header >
             <!-- Icon Section Start -->
             <div class="icon-section" style="background-color:blue">
                 <div class="container">
@@ -49,123 +49,126 @@
             </div>
             <!-- //Icon Section End -->
             <!-- Nav bar Start -->
-            <nav class="navbar navbar-default container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
-                        <span>
-                            <a href="#">
-                                <i class="livicon" data-name="responsive-menu" data-size="25" data-loop="true" data-c="#757b87" data-hc="#ccc"></i>
-                            </a>
-                        </span>
-                    </button>
-                    <a class="navbar-brand" href="#">
-                        <img src="~/Front End/images/download.png" class="logo_position" style="font-weight:100;" />
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse" id="collapse">
-                    <ul class="nav navbar-nav navbar-right">
+            <nav class="navbar navbar-default container-lg">
+                <div class="row">
 
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Annonce</a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Ajouter vente</a>
-                                    <ul class="dropdown-menu" role="menu">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+                            <span>
+                                <a href="#">
+                                    <i class="livicon" data-name="responsive-menu" data-size="25" data-loop="true" data-c="#757b87" data-hc="#ccc"></i>
+                                </a>
+                            </span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img src="~/Front End/images/download.png" class="logo_position" style="font-weight:100;" />
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse row" id="collapse">
+                        <ul class="nav navbar-nav navbar-right list-group-horizontal-lg">
 
-                                        <li>
-                                            <a href="@Url.Action("CreateM","Annonce")"> Maison</a>
-                                        </li>
-                                        <li>
-                                            <a href="@Url.Action("CreateStudioV","Annonce")"> studio</a>
-                                        </li>
-                                        <li>
-                                            <a href="@Url.Action("CreateAppartementV","Annonce")"> Appartement</a>
-                                        </li>
-                                        <li>
-                                            <a href="@Url.Action("CreateTerrain","Annonce")"> Terrain</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Annonce</a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Ajouter vente</a>
+                                        <ul class="dropdown-menu" role="menu">
 
-
-
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ajouter Location</a>
-                                    <ul class="dropdown-menu" role="menu">
-
-                                        <li>
-                                            <a href="@Url.Action("Create","Annonce")"> Maison</a>
-                                        </li>
-                                        <li>
-                                            <a href="@Url.Action("CreateStudio","Annonce")"> studio</a>
-                                        </li>
-                                        <li>
-                                            <a href="@Url.Action("CreateAppartement","Annonce")"> Appartement</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/mesfavori")}}">Mes Interesses</a>
-                                </li>
-                            </ul>
-
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Workshop</a>
-                            <ul class="dropdown-menu" role="menu">
-
-                                <li>
-                                    <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/affiche")}}">voir les workshop</a>
-                                </li>
-                                <li>
-                                    <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/archive")}}">historique de workshop</a>
-                                </li>
-                                <li><a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/mesfavoris")}}">Mes Favoris</a></li>
-
-                                <li><a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/afficheS")}}">consulter Session</a>
+                                            <li>
+                                                <a href="@Url.Action("CreateM","Annonce")"> Maison</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("CreateStudioV","Annonce")"> studio</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("CreateAppartementV","Annonce")"> Appartement</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("CreateTerrain","Annonce")"> Terrain</a>
+                                            </li>
+                                        </ul>
+                                    </li>
 
 
-                            </ul>
-                        </li>
 
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Réservation </a>
-                            <ul class="dropdown-menu" role="menu">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ajouter Location</a>
+                                        <ul class="dropdown-menu" role="menu">
 
-                                <li>
-                                    <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/affichageReservation")}}">Consulter mes réservations</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> News</a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ asset("news.html")}}">News</a>
-                                </li>
-                                <li>
-                                    <a href="{{ asset("news_item.html")}}">News Item</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Blog</a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ asset("blog.html")}}">Blog</a>
-                                </li>
-                                <li>
-                                    <a href="{{ asset("blogitem.html")}}">Blog Item</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="{{ asset("contact.html")}}">Contact</a>
-                        </li>
-                        <li>
-                            <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/login")}}">Logout</a>
-                        </li>
-                    </ul>
+                                            <li>
+                                                <a href="@Url.Action("Create","Annonce")"> Maison</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("CreateStudio","Annonce")"> studio</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("CreateAppartement","Annonce")"> Appartement</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/mesfavori")}}">Mes Interesses</a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Workshop</a>
+                                <ul class="dropdown-menu" role="menu">
+
+                                    <li>
+                                        <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/affiche")}}">voir les workshop</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/archive")}}">historique de workshop</a>
+                                    </li>
+                                    <li><a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/mesfavoris")}}">Mes Favoris</a></li>
+
+                                    <li><a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/afficheS")}}">consulter Session</a>
+
+
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Réservation </a>
+                                <ul class="dropdown-menu" role="menu">
+
+                                    <li>
+                                        <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/affichageReservation")}}">Consulter mes réservations</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Abonnements</a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="@Url.Action("nosOffre","Abonnement")"> Nos Offres</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index","Abonnement")"> Mes Abonnements</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> News</a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ asset("news.html")}}">News</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ asset("news_item.html")}}">News Item</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="{{ asset("contact.html")}}">Contact</a>
+                            </li>
+                            <li>
+                                <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/login")}}">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
             </nav>
             <!-- Nav bar End -->

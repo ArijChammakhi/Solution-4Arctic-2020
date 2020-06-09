@@ -1,0 +1,87 @@
+﻿<link rel="stylesheet" type="text/css" href="~/Content/Abonnements.css" />
+<script src="~/Scripts/jquery.slim.min.js"></script>
+<script src="~/Scripts/bootstrap.bundle.min.abonnement.js"></script>
+
+@model IEnumerable<Solution.Web.Models.AbonnementViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+<center><h2>Nos Abonnements</h2></center>
+<section class="pricing py-5">
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.abonnement.css" />
+
+    <div class="container">
+        </br>
+        <div class="row">
+            <!-- Free Tier -->
+            <div class="col-lg-4">
+                <div class="card mb-5 mb-lg-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted text-uppercase text-center">Gratuit</h5>
+                        <h6 class="card-price text-center">DT 0<span class="period">/moi</span></h6></br>
+                        <center><img src="~/Front End/images/AbonnementGratuit.png" /></center>
+                        <hr>
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Gestion des Bien Immobilier</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Gestion des Meubles</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Forum</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Annonce Sponsorisé</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="minus" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Simulation de credit</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="minus" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Notification par Mail</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="minus" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Géneration de contrat PDF</li>
+                        </ul>
+                        <a href="#" class="btn btn-block btn-primary text-uppercase">Abonner</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Plus Tier -->
+            <div class="col-lg-4">
+                <div class="card mb-5 mb-lg-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted text-uppercase text-center">Plus</h5>
+                        <h6 class="card-price text-center">DT 9<span class="period">/moi</span></h6></br>
+                        <center><img src="~/Front End/images/AbonnementPlus.png" /></center>
+                        <hr>
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Gestion des Bien Immobilier</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Gestion des Meubles</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Forum</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Annonce Sponsorisé</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Simulation de credit</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="minus" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Notification par Mail</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="minus" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Géneration de contrat PDF</li>
+                        </ul>
+
+                        <a href="@Url.Action("CreatePlus","Abonnement")" class="btn btn-block btn-primary text-uppercase">Abonner</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pro Tier -->
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted text-uppercase text-center">Pro</h5>
+                        <h6 class="card-price text-center">DT 30<span class="period">/moi</span></h6></br>
+                        <center><img src="~/Front End/images/AbonnementPro.png" /></center>
+                        <hr>
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Gestion des Bien Immobilier</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Gestion des Meubles</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Forum</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Annonce Sponsorisé</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Simulation de credit</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Notification par Mail</li>
+                            <li><span class="fa-li"><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i></span>Géneration de contrat PDF</li>
+                        </ul>
+                        <a href="@Url.Action("CreatePro","Abonnement")" class="btn btn-block btn-primary text-uppercase">Abonner</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </br>
+    </div>
+</section>

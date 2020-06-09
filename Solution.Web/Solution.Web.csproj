@@ -211,13 +211,19 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Abonnements.css" />
+    <Content Include="Content\all.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.abonnement.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Front End\.gitignore" />
     <Content Include="Front End\404.html" />
     <Content Include="Front End\500.html" />
@@ -270,6 +276,9 @@
     <Content Include="Front End\images\14.jpg" />
     <Content Include="Front End\images\15.jpg" />
     <Content Include="Front End\images\16.jpg" />
+    <Content Include="Front End\images\AbonnementGratuit.png" />
+    <Content Include="Front End\images\AbonnementPlus.png" />
+    <Content Include="Front End\images\AbonnementPro.png" />
     <Content Include="Front End\images\authors\author.png" />
     <Content Include="Front End\images\authors\avatar.jpg" />
     <Content Include="Front End\images\authors\avatar1.jpg" />
@@ -1336,6 +1345,7 @@
     <Content Include="Front End\vendors\tags\dist\bootstrap-tagsinput.less" />
     <Content Include="Front End\vendors\tags\dist\bootstrap-tagsinput.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.abonnement.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1358,12 +1368,18 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
     <Content Include="Scripts\jquery-3.5.1.slim.js" />
     <Content Include="Scripts\jquery-3.5.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.slim.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -1513,14 +1529,19 @@
     <Content Include="Views\Meuble\Delete.cshtml" />
     <Content Include="Views\Interresse\AddLike.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Abonnement\Index.cshtml" />
     <Content Include="Views\Abonnement\Details.cshtml" />
-    <Content Include="Views\Abonnement\Create.cshtml" />
+    <Content Include="Views\Abonnement\CreatePlus.cshtml" />
+    <Content Include="Views\Abonnement\mesAbonnements.cshtml" />
+    <Content Include="Views\Abonnement\nosOffre.cshtml" />
+    <Content Include="Views\Abonnement\Index.cshtml" />
     <Content Include="Views\Abonnement\Edit.cshtml" />
     <Content Include="Views\Abonnement\Delete.cshtml" />
+    <Content Include="Views\Abonnement\CreatePro.cshtml" />
+    <Content Include="Views\Abonnement\ConfirmAbonnement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Front End\images\Abonnement\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

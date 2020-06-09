@@ -127,16 +127,19 @@
 
                         </ul>
                     </li>
-
+                    
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Réservation </a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Abonnements</a>
                         <ul class="dropdown-menu" role="menu">
-
                             <li>
-                                <a href="{{ asset("http://localhost:8080/pi/web/app_dev.php/affichageReservation")}}">Consulter mes réservations</a>
+                                <a href="@Url.Action("nosOffre","Abonnement")"> Nos Offres</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index","Abonnement")"> Mes Abonnements</a>
                             </li>
                         </ul>
                     </li>
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> News</a>
                         <ul class="dropdown-menu" role="menu">

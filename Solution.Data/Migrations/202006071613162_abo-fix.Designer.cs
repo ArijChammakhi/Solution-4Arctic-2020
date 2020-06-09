@@ -7,13 +7,13 @@ namespace Solution.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class arouja : IMigrationMetadata
+    public sealed partial class abofix : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(arouja));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(abofix));
         
         string IMigrationMetadata.Id
         {
-            get { return "202006021932336_arouja"; }
+            get { return "202006071613162_abo-fix"; }
         }
         
         string IMigrationMetadata.Source

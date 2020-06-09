@@ -2,57 +2,75 @@
 
 @{
     ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Client.cshtml";
 }
 
-<h2>Details</h2>
+        <h4 class="col-lg-6 col-sm-6 mb-5 ">Mon Abonnement</h4>
+        <hr />
+        <div class="container">
+            <div class="row details">
 
-<div>
-    <h4>AbonnementViewModel</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageAbonnementM)
-        </dt>
+                <center>
+                    <div class="col-lg-6 col-sm-6 mb-5 ">
+                        <div class="card h-25">
+                            <a href="#">
+                                <img src="~/Content/@Model.ImageAbonnementM" alt="slider-image" class="img-responsive">
+                            </a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">Abonnement Dari @Model.typeM.ToString()</a>
+                                </h4>
+                                <p class="card-text">
+                                    <dl class="dl-horizontal ">
+                                        <dt>
+                                            Motif du Paiement
+                                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ImageAbonnementM)
-        </dd>
+                                        <dd>
+                                            @Html.DisplayFor(model => model.ImageAbonnementM)
+                                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PrixAbonnementM)
-        </dt>
+                                        <dt>
+                                            Etat d'abonnement
+                                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PrixAbonnementM)
-        </dd>
+                                        <dd>
+                                            @Html.DisplayFor(model => model.StateM)
+                                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateDebutAbonnementM)
-        </dt>
+                                        <dt>
+                                            Date d'abonnement
+                                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateDebutAbonnementM)
-        </dd>
+                                        <dd>
+                                            @Html.DisplayFor(model => model.DateDebutAbonnementM)
+                                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateFinAbonnementM)
-        </dt>
+                                        <dt>
+                                            Date d'expiration
+                                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateFinAbonnementM)
-        </dd>
+                                        <dd>
+                                            @Html.DisplayFor(model => model.DateFinAbonnementM)
+                                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UtilisateurId)
-        </dt>
+                                    </dl>
 
-        <dd>
-            @Html.DisplayFor(model => model.UtilisateurId)
-        </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdAbonnementM }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                                </p>
+                                <p>
+                                    @Html.ActionLink("Edit", "Edit", new { id = Model.IdAbonnementM }) |
+                                    @Html.ActionLink("Back to List", "Index")
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+                </center>
+
+            </div>
+        </div>
+    
+    

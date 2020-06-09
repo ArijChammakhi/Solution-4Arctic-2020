@@ -1,0 +1,56 @@
+﻿@model Solution.Web.Models.AbonnementViewModel
+
+@{
+    ViewBag.Title = "CreatePlus";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+<center><img src="~/Front End/images/AbonnementPlus.png" /></center>
+<center><h2 class="align-content-center">Abonnement Dari Plus</h2></center>
+
+
+@using (Html.BeginForm("CreatePlus", "Abonnement", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateDebutAbonnementM, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(model => model.DateDebutAbonnementM, new { @type = "date", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DateDebutAbonnementM, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateFinAbonnementM, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(model => model.DateFinAbonnementM, new { @type = "date", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DateFinAbonnementM, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ImageAbonnementM, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.TextBox("file", "", new { type = "file", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ImageAbonnementM, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" value="Back to List" class="btn btn-danger" onclick="location.href='@Url.Action("Index", "Abonnement")'" />
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+
+}
+
+

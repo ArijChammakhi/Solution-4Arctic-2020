@@ -12,5 +12,7 @@ namespace Solution.Service
     {
         Abonnement getAbonnementById(int id);
         IEnumerable<Abonnement> getMesAbonnements(string uid);
+        Abonnement confirmAbonnement(int id);
+
     }
 }

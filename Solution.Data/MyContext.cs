@@ -36,7 +36,9 @@ namespace Solution.Data
             //modelBuilder.Conventions.Add(...);
             modelBuilder.Configurations.Add(new IdentityUserLoginConfiguration());
             modelBuilder.Configurations.Add(new IdentityUserRoleConfiguration());
-           // modelBuilder.Configurations.Add(new AnnonceConfiguration());
+            modelBuilder.Configurations.Add(new ContratConfiguration());
+
+            // modelBuilder.Configurations.Add(new AnnonceConfiguration());
             modelBuilder.Conventions.Add(new DateTime2Convention());
             modelBuilder.Entity<Interesse>().HasRequired(p1 => p1.User)
                                             .WithMany(user => user.Interesses)
@@ -44,6 +46,7 @@ namespace Solution.Data
             modelBuilder.Entity<Interesse>().HasRequired(p1 => p1.Annonce)
                                             .WithMany(an => an.Interesses)
                                             .HasForeignKey(p1 => p1.IdAnnonce);
+
         }
         public class ContexInit : DropCreateDatabaseIfModelChanges<MyContext>
         {
