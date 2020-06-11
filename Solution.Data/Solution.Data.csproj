@@ -67,6 +67,14 @@
     <Compile Include="Migrations\202006071613162_abo-fix.designer.cs">
       <DependentUpon>202006071613162_abo-fix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006091711588_contrat.cs" />
+    <Compile Include="Migrations\202006091711588_contrat.designer.cs">
+      <DependentUpon>202006091711588_contrat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006092330416_contrat1.cs" />
+    <Compile Include="Migrations\202006092330416_contrat1.designer.cs">
+      <DependentUpon>202006092330416_contrat1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
     <Compile Include="Infrastructures\DataBaseFactory.cs" />
@@ -91,6 +99,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202006071613162_abo-fix.resx">
       <DependentUpon>202006071613162_abo-fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006091711588_contrat.resx">
+      <DependentUpon>202006091711588_contrat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006092330416_contrat1.resx">
+      <DependentUpon>202006092330416_contrat1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

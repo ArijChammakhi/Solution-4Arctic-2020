@@ -2,6 +2,7 @@
 @{ string path = "~/Content/" + Model.ImageBi;}
 
 @{
+    ViewBag.IDAnnonce = Model.Id;
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/Client.cshtml";
 }
@@ -175,15 +176,15 @@
 
             <div class="input-group">
                 <table>
-
-                    {% for i in inter if evenement is same as(i.evenement) and user is same as(i.idUser)%}
                     <label> Vous Etes Deja Interesse</label>
-                    {% else  %}
                     <li><a id="btn" class=" btn btn-primary" href="@Url.Action("AddLike","Interresse", new { id = @Model.Id}) "><span class="text-white"><i class="livicon" data-name="hand-right" data-size="24" data-loop="true" data-c="#fff" data-hc="white"></i></span></a></li>
-                    {% endfor %}
                 </table>
-
-
+            </div>
+            <div class="input-group">
+                <table>
+                    <label> Vous pouvez signer votre contrat</label>
+                    <li><a id="btn" class=" btn btn-primary" href="@Url.Action("Create","Contrats") "><span class="text-white"><i class="livicon" data-name="pencil" data-size="24" data-loop="true" data-c="#fff" data-hc="white"></i></span></a></li>
+                </table>
             </div>
 
         </div>

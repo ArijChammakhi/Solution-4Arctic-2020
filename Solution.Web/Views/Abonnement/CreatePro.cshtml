@@ -2,7 +2,8 @@
 
 @{
     ViewBag.Title = "CreatePro";
-    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+    Layout = "~/Views/Shared/Client.cshtml";
+
 }
 <center><img src="~/Front End/images/AbonnementPro.png" /></center>
 <center><h2 class="align-content-center">Abonnement Dari Pro</h2></center>
@@ -35,7 +36,13 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.ImageAbonnementM, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.Label("notre RIP bancaire :", htmlAttributes: new { @class = "control-label col-md-2" });
+        <div class="col-md-6">
+            <b class="form-control">5399 7209 1753 3532</b>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Motif du virrement ", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-6">
             @Html.TextBox("file", "", new { type = "file", @class = "form-control" })
             @Html.ValidationMessageFor(model => model.ImageAbonnementM, "", new { @class = "text-danger" })

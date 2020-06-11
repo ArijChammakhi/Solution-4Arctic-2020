@@ -9,9 +9,11 @@
 @using (Html.BeginForm())
 {
     <div class="container">
+
         <br>
 
         <div class="text-center">
+
             <input type="text" class="form-control" placeholder="rechercher par Nom :" id="recherche" name="evenementrecherche" style="width: 200px">
             <div class="searching">
                 <h3 class="border-success"><span class="heading_border bg-success">Voici la Liste de Tous Les Studios A Vendre</span></h3>
@@ -50,6 +52,7 @@
                 }
 
             </div>
+            <a class="btn btn-primary btn-block text-white col-sm-12" href="@Url.Action("CreateStudioV","Annonce")">Créer nouveau studio</a>
 
 
 

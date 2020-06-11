@@ -1,0 +1,418 @@
+﻿@model Solution.Web.Models.ContratModel
+
+@{
+    ViewBag.Title = "GenerateContrat";
+}
+
+
+<div class="WordSection1">
+
+    <div style="mso-element:para-border-div;border:solid windowtext 1.5pt;
+            padding:8.0pt 4.0pt 8.0pt 4.0pt">
+
+        <p class="MsoNormal" align="center" style="text-align:center;border:none;
+            mso-border-alt:solid windowtext 1.5pt;padding:0cm;mso-padding-alt:8.0pt 4.0pt 8.0pt 4.0pt">
+            <b>
+                <span style="font-size:24.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:
+                        minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin">
+                    Contrat
+                    de Vente du biens immobilier<o:p></o:p>
+                </span>
+            </b>
+        </p>
+
+    </div>
+
+    <p class="MsoNormal" align="center" style="text-align:center">
+        <span style="font-size:14.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:
+            minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin"><o:p>&nbsp;</o:p></span>
+    </p>
+
+    <p class="MsoNormal" align="center" style="text-align:center">
+        <span style="font-size:14.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:
+minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin"><o:p>&nbsp;</o:p></span>
+    </p>
+
+    <p class="MsoNormal">
+        <b>
+            <span style="font-size:14.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:
+minor-latin">Entre les soussignés :<o:p></o:p></span>
+        </b>
+    </p>
+
+    <p class="MsoNormal" align="center" style="text-align:center"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><o:p>&nbsp;</o:p></span></p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">D'une part :<o:p></o:p></span>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">
+            <B>@ViewBag.Owner.Nom @ViewBag.Owner.Prenom </B>Né(e) le
+            <b>@ViewBag.Owner.DateDeNaissance </b>agissant en tant que proprietaire du bien immobilier<o:p></o:p>
+        </span>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">Dénommé(e) ci-après<span style="mso-spacerun:yes">&nbsp; </span>« <b>Le vendeur</b> »<o:p></o:p></span>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">Et d'autre part : <o:p></o:p></span>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">
+            <b>@ViewBag.Client.Nom @ViewBag.Client.Prenom </b>Né(e) le
+            <b>@ViewBag.Client.DateDeNaissance </b>agissant en tant qu'acheteur du bien immobilier<o:p></o:p>
+        </span>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">Dénommé(e) ci-après<span style="mso-spacerun:yes">&nbsp; </span>« <b>L’acquéreur</b> »<o:p></o:p></span>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR"><o:p>&nbsp;</o:p></span>
+    </p>
+
+    <p class="MsoNormal">
+        <b>
+            <span style="font-size:14.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:
+minor-latin">Ont convenu et arrête ce qui suit :<o:p></o:p></span>
+        </b>
+    </p>
+
+    <p class="MsoNormal">
+        <b>
+            <span style="font-size:14.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:
+minor-latin"><o:p>&nbsp;</o:p></span>
+        </b>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">
+            Les parties déclarent ne pas
+            être concerné par une procédure de redressement ou liquidation judiciaire ou
+            procédure similaire, ni en état de tutelle, curatelle, mise sous sauvegarde de
+            justice, ni d’interdiction de faire des actes de disposition.<o:p></o:p>
+        </span>
+    </p>
+
+    <p class="MsoNormal" style="text-align:justify">
+        <span style="font-size:12.0pt;
+mso-bidi-font-size:10.0pt"><o:p>&nbsp;</o:p></span>
+    </p>
+
+    <p class="MsoNormal" style="line-height:150%">
+        <b>
+            <span style="font-size:14.0pt;
+line-height:150%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin">Article 1 - Désignation<o:p></o:p></span>
+        </b>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">
+            L'objet de la présente
+            convention de vente concerne les biens ci-après désignés :<o:p></o:p>
+        </span>
+    </p>
+
+    <p class="MsoListParagraphCxSpFirst" style="margin-bottom:12.0pt;mso-add-space:
+auto;text-align:justify;text-indent:-18.0pt;line-height:115%;mso-pagination:
+none;mso-list:l4 level1 lfo7">
+        <!--[if !supportLists]--><span style="font-size:12.0pt;
+line-height:115%;font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-font-kerning:.5pt;mso-fareast-language:FR">
+            <span style="mso-list:
+Ignore">
+                ·<span style="font:7.0pt &quot;Times New Roman&quot;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+            </span>
+        </span><!--[endif]--><span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">
+            Description précise de la marchandise
+            et des quantités concernées<o:p></o:p>
+        </span>
+    </p>
+
+    <p class="MsoListParagraphCxSpMiddle" style="margin-bottom:12.0pt;mso-add-space:
+auto;text-align:justify;text-indent:-18.0pt;line-height:115%;mso-pagination:
+none;mso-list:l4 level1 lfo7">
+        <!--[if !supportLists]--><span style="font-family:
+Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol">
+            <span style="mso-list:Ignore">
+                ·<span style="font:7.0pt &quot;Times New Roman&quot;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+            </span>
+        </span><!--[endif]--><span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">
+            Description précise de la
+            marchandise et des quantités concernées
+        </span>
+    </p>
+
+    <p class="MsoListParagraphCxSpLast" style="margin-bottom:12.0pt;mso-add-space:
+auto;text-align:justify;text-indent:-18.0pt;line-height:115%;mso-pagination:
+none;mso-list:l4 level1 lfo7">
+        <!--[if !supportLists]--><span style="font-family:
+Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol">
+            <span style="mso-list:Ignore">
+                ·<span style="font:7.0pt &quot;Times New Roman&quot;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+            </span>
+        </span><!--[endif]--><span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">
+            Description précise de la
+            marchandise et des quantités concernées
+        </span>
+    </p>
+
+    <p class="MsoNormal" style="text-align:justify">
+        <b>
+            <span style="font-size:14.0pt;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:
+minor-latin;mso-bidi-theme-font:minor-latin"><o:p>&nbsp;</o:p></span>
+        </b>
+    </p>
+
+    <p class="MsoNormal" style="line-height:150%">
+        <b>
+            <span style="font-size:14.0pt;
+line-height:150%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin">Article 2 - Prix<o:p></o:p></span>
+        </b>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">
+            En contrepartie du transfert de
+            propriété, l'acquéreur s'engage à payer la somme de <b>@ViewBag.Contrat.PrixContratM DT</b>.<o:p></o:p>
+        </span>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">
+            [Préciser éventuellement les
+            modalités de paiement]<o:p></o:p>
+        </span>
+    </p>
+
+    <p class="MsoNormal" style="text-align:justify"><o:p>&nbsp;</o:p></p>
+
+    <p class="MsoNormal" style="text-align:justify"><o:p>&nbsp;</o:p></p>
+
+    <p class="MsoNormal" style="text-align:justify"><o:p>&nbsp;</o:p></p>
+
+    <p class="MsoNormal" style="line-height:150%">
+        <b>
+            <span style="font-size:14.0pt;
+line-height:150%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin">Article 3 - Livraison<o:p></o:p></span>
+        </b>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">
+            Après réception du paiement de
+            l'acquéreur, le vendeur s'engage à lui remettre les marchandises au plus tard
+            pour <span class="GramE">le</span> <b>@ViewBag.Contrat.DateContratM </b>  . En
+            cas d'impossibilité le vendeur s'engage à prévenir l'acheteur dans les
+            meilleurs délais et à lui consentir un rabais de 0,05% sur le prix HT par jour
+            de retard.<o:p></o:p>
+        </span>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">
+            En cas de perte ou de détérioration
+            des biens, la responsabilité du vendeur est engagée jusqu'à l'acceptation effective
+            des biens par l'acquéreur.<o:p></o:p>
+        </span>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR"><o:p>&nbsp;</o:p></span>
+    </p>
+
+    <p class="MsoNormal" style="line-height:150%">
+        <b>
+            <span style="font-size:14.0pt;
+line-height:150%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin">
+                Article 4 - Clauses
+                particulières<o:p></o:p>
+            </span>
+        </b>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">
+            Le vendeur garantit qu'il a la
+            capacité de vendre les marchandises et qu'elles sont libres de toute servitude
+            et d'engagement qui empêcherait leurs ventes.<o:p></o:p>
+        </span>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR"><o:p>&nbsp;</o:p></span>
+    </p>
+
+    <p class="MsoNormal" style="line-height:150%">
+        <b>
+            <span style="font-size:14.0pt;
+line-height:150%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin">Article 5 - Litiges<o:p></o:p></span>
+        </b>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR">
+            Tout litige portant sur
+            l'exécution du présent contrat ou de son interprétation sera de la compétence
+            du Tribunal de commerce de [Ville].<o:p></o:p>
+        </span>
+    </p>
+
+    <p class="MsoNormal" style="margin-bottom:12.0pt;text-align:justify;line-height:
+115%;mso-pagination:none">
+        <span style="font-size:12.0pt;line-height:115%;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;
+mso-font-kerning:.5pt;mso-fareast-language:FR"><o:p>&nbsp;</o:p></span>
+    </p>
+
+    <p class="MsoNormal" style="line-height:150%">
+        <b>
+            <span style="font-size:12.0pt;
+line-height:150%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin">
+                Fait à
+                <b>Tunis</b>, <span class="GramE">le</span> <b>@ViewBag.Contrat.DateContratM</b> en deux exemplaires originaux <o:p></o:p>
+            </span>
+        </b>
+    </p>
+
+    <p class="MsoNormal">
+        <i style="mso-bidi-font-style:normal">
+            <span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">
+                (<span class="GramE">signatures</span> précédées de la mention «&nbsp;lu et
+                approuvé&nbsp;»)<o:p></o:p>
+            </span>
+        </i>
+    </p>
+
+    <p class="MsoNormal" align="center" style="text-align:center">
+        <b style="mso-bidi-font-weight:
+normal">
+            <i style="mso-bidi-font-style:normal">
+                <span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;"><o:p>&nbsp;</o:p></span>
+            </i>
+        </b>
+    </p>
+
+    <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><o:p>&nbsp;</o:p></span></b></p>
+
+    <p class="MsoNormal" style="line-height:150%">
+        <b>
+            <span style="font-size:12.0pt;
+line-height:150%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin"><o:p>&nbsp;</o:p></span>
+        </b>
+    </p>
+
+    <p class="MsoNormal" style="line-height:150%">
+        <b>
+            <span style="font-size:12.0pt;
+line-height:150%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin">
+                Le vendeur<span style="mso-tab-count:6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">
+                    &nbsp;&nbsp;
+                </span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>L’acquéreur<o:p></o:p>
+            </span>
+        </b>
+    </p>
+
+</div>

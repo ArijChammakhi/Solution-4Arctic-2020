@@ -24,6 +24,7 @@ namespace Solution.Data
             return new MyContext();
         }
         public DbSet<Abonnement> Abonnements { get; set; }
+        public DbSet<Contrat> contrats { get; set; }
         public DbSet<Annonce> Annonces { get; set; }
         public DbSet<Meuble> meubles { get; set; }
         public DbSet<Interesse> interesses { get; set; }

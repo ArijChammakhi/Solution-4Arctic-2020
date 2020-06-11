@@ -97,6 +97,9 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.7.3\lib\net461\Rotativa.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -186,10 +189,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AbonnementApiController.cs" />
     <Compile Include="Controllers\AbonnementController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnnonceApiWebController.cs" />
     <Compile Include="Controllers\AnnonceController.cs" />
+    <Compile Include="Controllers\ContratController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InterresseController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -200,6 +205,7 @@
     <Compile Include="Models\AbonnementViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AnnonceVM.cs" />
+    <Compile Include="Models\ContratModel.cs" />
     <Compile Include="Models\FilmVm.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LikeVM.cs" />
@@ -207,6 +213,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MeubleVm.cs" />
     <Compile Include="Models\ProducteurVm.cs" />
+    <Compile Include="Models\UserModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -1344,6 +1351,10 @@
     <Content Include="Front End\vendors\tags\bower_components\typeahead.js\typeahead.js.jquery.json" />
     <Content Include="Front End\vendors\tags\dist\bootstrap-tagsinput.less" />
     <Content Include="Front End\vendors\tags\dist\bootstrap-tagsinput.min.js.map" />
+    <Content Include="Rotativa\help-wkhtmltoimage.txt" />
+    <Content Include="Rotativa\help-wkhtmltopdf.txt" />
+    <Content Include="Rotativa\wkhtmltoimage.exe" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.abonnement.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -1373,6 +1384,8 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="App_Browsers\qt.browser" />
+    <None Include="Properties\PublishProfiles\SolutionWeb20200610112930 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
@@ -1538,10 +1551,17 @@
     <Content Include="Views\Abonnement\Delete.cshtml" />
     <Content Include="Views\Abonnement\CreatePro.cshtml" />
     <Content Include="Views\Abonnement\ConfirmAbonnement.cshtml" />
+    <Content Include="Views\Contrats\Create.cshtml" />
+    <Content Include="Views\Contrats\Index.cshtml" />
+    <Content Include="Views\Contrats\MyContrat.cshtml" />
+    <Content Include="Views\Contrats\EditContrat.cshtml" />
+    <Content Include="Views\Contrats\DelContrat.cshtml" />
+    <Content Include="Views\Contrats\GenerateContrat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Front End\images\Abonnement\" />
+    <Folder Include="Views\Contrat\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

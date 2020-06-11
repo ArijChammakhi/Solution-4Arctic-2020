@@ -42,7 +42,7 @@ namespace Solution.Web.Controllers
                     UtilisateurId = item.UserID
                 });
             }
-
+            ViewBag.userID = User.Identity.GetUserId();
             return View(abs);
         }
 

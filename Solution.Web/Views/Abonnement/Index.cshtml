@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+    Layout = "~/Views/Shared/Client.cshtml";
 }
 
 
@@ -44,8 +44,11 @@
                         </td>
 
                         <td>
-                            @Html.ActionLink("Confirmer", "ConfirmAbonnement", new { id = item.IdAbonnementM }) |
-                            @Html.ActionLink("Edit", "Edit", new { id = item.IdAbonnementM }) |
+                            @if(ViewBag.userID == "b9902d68-ca66-4454-8a17-a53d0a4c8b58"){
+                            <div>
+                                @Html.ActionLink("Confirmer", "ConfirmAbonnement", new { id = item.IdAbonnementM }) |
+                            </div>
+                            }
                             @Html.ActionLink("Details", "Details", new { id = item.IdAbonnementM }) |
                             @Html.ActionLink("Delete", "Delete", new { id = item.IdAbonnementM })
                         </td>

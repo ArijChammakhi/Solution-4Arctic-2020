@@ -14,7 +14,7 @@ namespace Solution.Domain.Entities
         public enum Motif { Plus, Pro }
 
         [Key, Column(Order = 1)]
-        public int ClientID { get; set; }
+        public string ClientID { get; set; }
         public User Client { get; set; }
 
         [Key, Column(Order = 2)]
